@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_05_162001) do
+ActiveRecord::Schema.define(version: 2018_10_09_183141) do
+
+  create_table "pictures", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "category"
+    t.float "price"
+    t.float "avarage_rate"
+    t.float "quality_rate"
+    t.float "design_rate"
+    t.float "price_rate"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_pictures_on_user_id"
+  end
+
+  create_table "sells", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "picture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", default: "", null: false

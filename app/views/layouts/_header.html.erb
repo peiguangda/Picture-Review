@@ -1,74 +1,70 @@
-   <div class="nav-container">
-      <nav class="top-bar overlay-bar">
-        <div class="container">
-          <div class="row utility-menu">
-            <div class="col-md-12">
-              <div class="utility-inner clearfix">
-                <span class="alt-font"><i class="fa fa-map-marker" aria-hidden="true"></i></i> 300 Collins St Melbourne</span>
-                <span class="alt-font"><i class="fa fa-envelope-open" aria-hidden="true"></i></i> hello@pivot.net</span>
+<div class="nav-container">
+  <nav class="top-bar overlay-bar">
+    <div class="container">
+      <div class="row utility-menu">
+        <div class="col-md-12">
+          <div class="utility-inner clearfix">
+            <span class="alt-font"><i class="fa fa-map-marker" aria-hidden="true"></i></i>
+              <%= link_to "HEDSPI K59", "https://goo.gl/maps/yUWMfPh5Sno", class: "alt-font", target: "_blank" %>
 
-                <div class="pull-right">
-                  <a href="#" class="btn btn-primary login-button btn-xs">Login</a>
-                  <a href="#" class="btn btn-primary btn-filled btn-xs">Signup</a>
-                    <a href="#" class="language"><%= image_tag "english.png" %></a>
-                   <a href="#" class="language"> <%= image_tag "denmark.png" %></a>
-                </div>
-              </div>
+            </span>
+            <span class="alt-font"><i class="fa fa-envelope-open" aria-hidden="true"></i></i>hedspi@gmail.com</span>
+            <div class="pull-right">
+              <%= link_to "Login", new_user_session_path, class: "btn btn-primary login-button btn-xs" %>
+              <%= link_to "Signup", new_user_registration_path, class: "btn btn-primary btn-filled btn-xs" %>
+              <a href="#" class="language"><%= image_tag "flag_vn.jpg" %></a>
+              <a href="#" class="language"> <%= image_tag "flag_japan.png" %></a>
             </div>
-          </div><!--end of row-->
-
-
-          <div class="row nav-menu">
-            <div class="col-md-2 columns">
-                <a href="#" class="logo logo-light"><%= image_tag "logo-light.png" %>
-                 <a href="#" class="logo logo-dark"><%= image_tag "logo-dark.png" %>
-            </div>
-
-            <div class="col-md-10 columns">
-              <ul class="menu">
-                 <li>
-                  <%= link_to "Home", home_path %>
-                </li>
-                <li>
-                  <%= link_to "About", about_path %>
-                </li>
-               <li>
-                  <%= link_to "Contact", contact_path %>
-                </li>
-                <li>
-                  <%= link_to "Help", help_path %>
-                </li>
-              </ul>
-
-              <ul class="social-icons text-right">
-                <li>
-                  <a href="#">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                   <i class="fa fa-instagram" aria-hidden="true"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div><!--end of row-->
-
-          <div class="mobile-toggle">
-            <i class="icon icon_menu"></i>
           </div>
+        </div>
+      </div>
+      <div class="row nav-menu">
+        <div class="col-md-2 columns">
+          <%= link_to "PICTURES", root_path, class: "logo-font" %>
+        </div>
 
-        </div><!--end of container-->
-      </nav>
-    </div>
+        <div class="col-md-10 columns">
+          <ul class="menu">
+            <li>
+              <%= link_to "Home", home_path %>
+            </li>
+            <li>
+              <%= link_to "About", about_path %>
+            </li>
+            <li>
+              <%= link_to "Contact", contact_path %>
+            </li>
+            <li>
+              <%= link_to "Help", help_path %>
+            </li>
+          </ul>
 
+          <ul class="social-icons text-right">
+            <li>
+              <a href="#">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
 
+            <li>
+              <a href="#">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+            </li>
 
+            <li>
+              <a href="#">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div><!--end of row-->
+
+      <div class="mobile-toggle">
+        <i class="icon icon_menu"></i>
+      </div>
+
+    </div><!--end of container-->
+  </nav>
+</div>
