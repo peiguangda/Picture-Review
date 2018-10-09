@@ -1,16 +1,29 @@
-<h2>Forgot your password?</h2>
+<div class="main-container">
+  <header class="fullscreen-element no-pad centered-text okconde">
+    <div class="background-image-holder parallax-background overlay">
+      <a href="#" class="background-image"> <%= image_tag "background.jpg" %></a>
+    </div>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="container">
+      <div class="row">
+        <div class="dme col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 text-center">
+          <h1 class="text-white">Forgot password?</h1>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+          <div class="photo-form-wrapper clearfix">
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: {method: :post}) do |f| %>
+              <%= devise_error_messages! %>
+              <div class="field">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email Address", class: "form-email" %>
+              </div>
+              <div class="actions">
+                <%= f.submit "Send me", class: "login-btn btn-filled" %>
+              </div>
+            <% end %>
+            <%= render "users/shared/links" %>
+          </div>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+      </div>
+    </div>
+  </header>
+</div>
