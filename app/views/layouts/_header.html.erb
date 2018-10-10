@@ -10,8 +10,13 @@
             </span>
             <span class="alt-font"><i class="fa fa-envelope-open" aria-hidden="true"></i></i>hedspi@gmail.com</span>
             <div class="pull-right">
-              <%= link_to "Login", new_user_session_path, class: "btn btn-primary login-button btn-xs" %>
-              <%= link_to "Signup", new_user_registration_path, class: "btn btn-primary btn-filled btn-xs" %>
+              <% if user_signed_in? %>
+                <%= link_to current_user.email, edit_user_registration_path, class: "btn btn-primary login-button btn-xs" %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-primary login-button btn-xs" %>
+              <% else %>
+                <%= link_to "Login", new_user_session_path, class: "btn btn-primary login-button btn-xs" %>
+                <%= link_to "Signup", new_user_registration_path, class: "btn btn-primary btn-filled btn-xs" %>
+              <% end %>
               <a href="#" class="language"><%= image_tag "flag_vn.jpg" %></a>
               <a href="#" class="language"> <%= image_tag "flag_japan.png" %></a>
             </div>
