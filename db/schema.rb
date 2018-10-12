@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2018_10_09_183141) do
     t.string "description"
     t.string "category"
     t.float "price"
+    t.boolean "negotiable", default: false
     t.float "avarage_rate"
     t.float "quality_rate"
     t.float "design_rate"
