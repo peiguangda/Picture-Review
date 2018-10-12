@@ -5,6 +5,7 @@ class CreatePictures < ActiveRecord::Migration[5.2]
       t.string :description
       t.string :category
       t.float :price
+      t.boolean :negotiable, :default => false
       t.float :avarage_rate
       t.float :quality_rate
       t.float :design_rate

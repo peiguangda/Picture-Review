@@ -1051,7 +1051,6 @@ header.centered-text h1 {
 }
 header.centered-text .btn {
   margin-right: 16px;
-  margin-top: 24px;
 }
 header.centered-text .btn:last-child {
   margin-right: 0px;
@@ -1059,10 +1058,6 @@ header.centered-text .btn:last-child {
 
 .dme {
   padding-top: 180px;
-}
-
-.okconde {
-  height: 620px !important;
 }
 
 .ok1{
@@ -1385,7 +1380,6 @@ img.phone-portrait {
 }
 .background-image-holder.parallax-background {
   height: 120%;
-  top: -10%;
 }
 .hover-background .background-image-holder,
 .hover-background .foreground-image-holder {
@@ -3048,9 +3042,6 @@ footer.short-2 .contact-action:hover {
     border-radius: 25px !important;
     border: 2px solid rgba(255, 255, 255, 0.2) !important;
   }
-  .pricing-2 .hidden-sm:first-child {
-    display: none;
-  }
   .pricing-2 .pricing-table.emphasis .features li {
     border-radius: 25px;
   }
@@ -3303,12 +3294,7 @@ footer.short-2 .contact-action:hover {
     border-radius: 25px !important;
     border: 2px solid rgba(255, 255, 255, 0.2) !important;
   }
-  .hidden-sm {
-    display: block !important;
-  }
-  .hidden-sm:first-child {
-    display: none !important;
-  }
+
   footer.details .social-icons li {
     margin-bottom: 16px;
   }
