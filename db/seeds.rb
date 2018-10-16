@@ -3,17 +3,84 @@ User.create!({
   email: "peiguangda@gmail.com",
   password: "123456",
   password_confirmation: "123456",
-  confirmation_token: nil,
-  confirmation_sent_at: Time.now,
-  confirmed_at: Time.now
 });
 
-User.create!({
+user = User.create!({
    username: "example",
    email: "example@gmail.com",
    password: "123456",
    password_confirmation: "123456",
-   confirmation_token: nil,
-   confirmation_sent_at: Time.now,
-   confirmed_at: Time.now
 });
+
+user.pictures.create!({
+    name: "Tranh Dong Ho",
+    description: "Buc tranh rat dep",
+    category: "Tranh dan gian",
+    price: 1500000,
+    negotiable: false,
+    avarage_rate: 1,
+    quality_rate: 1,
+    design_rate: 1,
+    price_rate: 1,
+})
+
+user.pictures.create!({
+    name: "Tranh Dong Ho",
+    description: "Buc tranh rat dep",
+    category: "Tranh dan gian",
+    price: 1500000,
+    negotiable: false,
+    avarage_rate: 1,
+    quality_rate: 1,
+    design_rate: 1,
+    price_rate: 1,
+})
+
+user.pictures.create!({
+    name: "Tranh Dong Ho",
+    description: "Buc tranh rat dep",
+    category: "Tranh dan gian",
+    price: 1500000,
+    negotiable: false,
+    avarage_rate: 1,
+    quality_rate: 1,
+    design_rate: 1,
+    price_rate: 1,
+})
+
+user.pictures.create!({
+    name: "Tranh Dong Ho",
+    description: "Buc tranh rat dep",
+    category: "Tranh dan gian",
+    price: 1500000,
+    negotiable: false,
+    avarage_rate: 1,
+    quality_rate: 1,
+    design_rate: 1,
+    price_rate: 1,
+})
+
+user.pictures.create!({
+    name: "Tranh Dong Ho",
+    description: "Buc tranh rat dep",
+    category: "Tranh dan gian",
+    price: 1500000,
+    negotiable: false,
+    avarage_rate: 1,
+    quality_rate: 1,
+    design_rate: 1,
+    price_rate: 1,
+})
+
+user.pictures.create!({
+    name: "Tranh Dong Ho",
+    description: "Buc tranh rat dep",
+    category: "Tranh dan gian",
+    price: 1500000,
+    negotiable: false,
+    avarage_rate: 1,
+    quality_rate: 1,
+    design_rate: 1,
+    price_rate: 1,
+})
+
