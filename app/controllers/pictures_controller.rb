@@ -6,7 +6,8 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = current_user.pictures.new picture_params
+    @picture = current_user.pictures.new
+      picture_params
     if @picture.save
       flash[:success] = "Post picture successfull!"
     else
