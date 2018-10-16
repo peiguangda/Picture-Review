@@ -26,43 +26,44 @@
   </header>
 </div>
 <div style="background: white">
-   <% if user_signed_in? %>
-         <section class="popular">
-            <div class="container">
-                <div class="title text-center m-b-30">
-                    <h2>Your painting and artwork</h2>
-                    <p class="lead">Enjoy the beauty of art</p>
-                </div>
+  <% if user_signed_in? %>
+    <section class="popular">
+      <div class="container">
+        <div class="title text-center m-b-30">
+          <h2>Your painting and artwork</h2>
+          <p class="lead">Enjoy the beauty of art</p>
+        </div>
 
-                <div class="row">
-                    <!-- Each popular food item starts -->
-                     <% current_user.pictures.each do |p| %>
-                    <div class="col-md-4 food-item">
-                        <div class="food-item-wrap">
-                            <div class="figure-wrap bg-image">
-                                <%= image_tag "image1.jpg", :size => "360x210" %>
-                                <div class="rating pull-left"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-                                <div class="review pull-right"><a href="#">198 reviews</a> </div>
-                            </div>
-                            <div class="content">
-                                <h5><a href=""><%= p.name %></a></h5>
-                                <div class="product-name"><%= p.category %></div>
-                                <div class="price-btn-block"> <span class="price"><%= p.price%> VND</span> <a href="#" class="btn theme-btn-dash pull-right">Order Now</a> </div>
-                            </div>
-                            <div class="restaurant-block">
-                                <div class="left">
-                                    <a class="pull-left" href="#"><%= image_tag "logo1.png" %></a>
-                                    <div class="pull-left right-text"> <a href="#">Description</a> <span><%= p.description %></span> </div>
-                                </div>
-                                <div class="right-like-part pull-right"> <i class="fa fa-heart-o"></i> <span>48</span> </div>
-                            </div>
-                        </div>
-                    </div>
-                      <% end %>
+        <div class="row">
+          <!-- Each popular food item starts -->
+          <% current_user.pictures.each do |p| %>
+            <div class="col-md-4 food-item">
+              <div class="food-item-wrap">
+                <div class="figure-wrap bg-image">
+                  <%= image_tag "damcuoichuot.jpg", :size => "360x210" %>
+                  <div class="rating pull-left"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
+                  <div class="review pull-right"><a href="#">198 reviews</a> </div>
                 </div>
-
+                <div class="content">
+                  <!--                                <h5><a href=""><%#= p.name %></a></h5>-->
+                  <h5><%= link_to p.name, picture_path(p) %></h5>
+                  <div class="product-name"><%= p.category %></div>
+                  <div class="price-btn-block"> <span class="price"><%= p.price%> VND</span> <a href="#" class="btn theme-btn-dash pull-right">Order Now</a> </div>
+                </div>
+                <div class="restaurant-block">
+                  <div class="left">
+                    <a class="pull-left" href="#"><%= image_tag "logo1.png" %></a>
+                    <div class="pull-left right-text"> <a href="#">Description</a> <span><%= p.description %></span> </div>
+                  </div>
+                  <div class="right-like-part pull-right"> <i class="fa fa-heart-o"></i> <span>48</span> </div>
+                </div>
+              </div>
             </div>
-        </section>
+          <% end %>
+        </div>
 
-   <% end %>
+      </div>
+    </section>
+
+  <% end %>
 </div>

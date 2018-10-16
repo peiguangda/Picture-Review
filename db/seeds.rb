@@ -13,7 +13,7 @@ user = User.create!({
 });
 
 user.pictures.create!({
-    name: "Tranh Dong Ho",
+    name: "Đám Cưới Chuột",
     description: "Buc tranh rat dep",
     category: "Tranh dan gian",
     price: 1500000,
@@ -25,7 +25,7 @@ user.pictures.create!({
 })
 
 user.pictures.create!({
-    name: "Tranh Dong Ho",
+    name: "Đám Cưới Chuột",
     description: "Buc tranh rat dep",
     category: "Tranh dan gian",
     price: 1500000,
@@ -37,7 +37,7 @@ user.pictures.create!({
 })
 
 user.pictures.create!({
-    name: "Tranh Dong Ho",
+    name: "Đám Cưới Chuột",
     description: "Buc tranh rat dep",
     category: "Tranh dan gian",
     price: 1500000,
@@ -49,7 +49,7 @@ user.pictures.create!({
 })
 
 user.pictures.create!({
-    name: "Tranh Dong Ho",
+    name: "Đám Cưới Chuột",
     description: "Buc tranh rat dep",
     category: "Tranh dan gian",
     price: 1500000,
@@ -61,7 +61,7 @@ user.pictures.create!({
 })
 
 user.pictures.create!({
-    name: "Tranh Dong Ho",
+    name: "Đám Cưới Chuột",
     description: "Buc tranh rat dep",
     category: "Tranh dan gian",
     price: 1500000,
@@ -73,7 +73,7 @@ user.pictures.create!({
 })
 
 user.pictures.create!({
-    name: "Tranh Dong Ho",
+    name: "Đám Cưới Chuột",
     description: "Buc tranh rat dep",
     category: "Tranh dan gian",
     price: 1500000,

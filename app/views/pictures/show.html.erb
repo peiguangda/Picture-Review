@@ -1,0 +1,168 @@
+<div class="main-container">
+  <header class="fullscreen-element no-pad centered-text  okconde">
+    <div class="background-image-holder parallax-background overlay">
+      <a href="#" class="background-image"> <%= image_tag "background.jpg" %></a>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="dme col-md-12 text-center">
+          <span class="text-white alt-font ok1">Painting Every Day</span>
+          <h1 class="text-white">Each picture is a life worthy of humanity</h1>
+          <p class="lead text-white">Welcome to Diamond Team</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="article-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+          <div class="article-body">
+            <p class="lead">
+              <!--              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.-->
+              <%#= @picture.name %>
+              Đám cưới chuột
+            </p>
+            <a>Rating :</a>
+            <div class="rating2">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+
+            <figure>
+              <a > <%= image_tag "damcuoichuot.jpg" %></a>
+              <figcaption><%= @picture.name %></figcaption>
+            </figure>
+            <h2>Description :</h2>
+            <p>
+              <!--              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident-->
+              Nhân vật mèo nhận lễ trong tư thế trang trọng, có đôi chút dò xét nhưng cũng tỏ rõ thái độ tôn trọng ngày lễ lớn của đôi vợ chồng mới. Theo thang bậc của tự nhiên, sự chia sẻ này là cách để họ hàng nhà chuột giải quyết mâu thuẫn tự sinh giữa chuột và mèo. Họ hàng nhà chuột, vốn hiểu sự yên ổn của mình cần có cả sự no đủ của mèo nên đã “mừng mà làm” (“hưng tác”, chữ trên đầu nhân vật chuột thứ hai).
+            </p>
+          </div><!--end of article body-->
+        </div>
+      </div><!--end of row-->
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <br>
+          <div class="price">
+            <span class="price"><%= @picture.price%> VND</span>
+            <a href="#" class="btn theme-btn-dash pull-right">Order Now</a>
+          </div>
+
+
+
+
+        </div>
+      </div><!--end of row-->
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+          <div class="comment-list">
+            <h5>4 Comments</h5>
+            <ol>
+              <li>
+                <div class="blog-comment">
+                  <div class="user">
+                    <a > <%= image_tag "dai.jpg" %></a>
+                  </div>
+                  <div class="message">
+                    <div class="info">
+                      <h6>Daiさん</h6>
+                      <h7>September 17 2014</h7>
+                      <a href="#" class="link-text">Reply</a>
+                    </div>
+                    <p>
+                      Under my tutelage, you will grow from boys to men. From men into gladiators. And from gladiators into Swansons.
+                    </p>
+                  </div>
+                </div>
+              </li><!--end of individual comment-->
+
+              <li>
+                <div class="blog-comment">
+                  <div class="user">
+                    <a > <%= image_tag "duc.jpg" %></a>
+                  </div>
+                  <div class="message">
+                    <div class="info">
+                      <h6>Ducさん</h6>
+                      <h7>September 18 2014</h7>
+                      <a href="#" class="link-text">Reply</a>
+                    </div>
+                    <p>
+                      Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+                    </p>
+                  </div>
+                </div>
+              </li><!--end of individual comment-->
+
+              <ul class="children">
+                <li>
+                  <div class="blog-comment">
+                    <div class="user">
+                      <a > <%= image_tag "t.jpg" %></a>
+                    </div>
+                    <div class="message">
+                      <div class="info">
+                        <h6>Thaiさん</h6>
+                        <h7>September 17 2014</h7>
+                        <a href="#" class="link-text">Reply</a>
+                      </div>
+                      <p>
+                        Under my tutelage, you will grow from boys to men. From men into gladiators. And from gladiators into Swansons.
+                      </p>
+                    </div>
+                  </div>
+                </li><!--end of individual comment-->
+              </ul>
+
+              <li>
+                <div class="blog-comment">
+                  <div class="user">
+                    <a > <%= image_tag "th.jpg" %></a>
+                  </div>
+                  <div class="message">
+                    <div class="info">
+                      <h6>thien さん</h6>
+                      <h7>September 12 2014</h7>
+                      <a href="#" class="link-text">Reply</a>
+                    </div>
+                    <p>
+                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                    </p>
+                  </div>
+                </div>
+              </li><!--end of individual comment-->
+
+            </ol>
+          </div><!--end of comments list-->
+
+          <div class="comment-form-wrapper">
+            <h5>Join the conversation</h5>
+            <div class="comment-respond">
+              <h5>Leave a reply</h5>
+              <form class="comment-form">
+
+                <div class="form-input">
+                  <textarea rows="8" placeholder="Your comment here"></textarea>
+                </div>
+
+                <div class="form-input">
+                  <input type="Submit" class="btn btn-primary" value="Submit Comment" />
+                </div>
+
+              </form>
+            </div>
+          </div><!--end of comment form wrapper-->
+        </div><!--end of 8 columns-->
+      </div><!--end of row-->
+
+    </div><!--end of container-->
+  </section>
+</div>
+
