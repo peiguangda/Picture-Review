@@ -5,6 +5,11 @@ class PicturesController < ApplicationController
     @picture = Picture.new
   end
 
+  def show
+    @picture = Picture.find(params[:id])
+    render :show
+  end
+
   def create
     @picture = current_user.pictures.new
       picture_params
