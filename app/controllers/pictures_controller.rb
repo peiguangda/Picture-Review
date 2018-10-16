@@ -22,6 +22,6 @@ class PicturesController < ApplicationController
   end
 
   def picture_params
-    params.require(:picture).permit :category, :name, :description, :price
+    params.require(:picture).permit :category, :name, :description, :price, {images: []}
   end
 end
