@@ -8,6 +8,9 @@
       <div class="row">
         <div class="dme col-sm-12 col-md-12 col-lg-12 col-xs-12">
           <div class="page-ads box form-post">
+            <% flash.each do |message_type, message| %>
+              <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+            <% end %>
             <h2 class="title-2">Sale a new pictures</h2>
             <%= form_for @picture, class: "search-form" do |f| %>
 
@@ -79,143 +82,26 @@
                     </div>
 
                     <div class="input-group-btn">
-                      <button type="button" tabindex="500" title="Clear selected files" class="btn btn-default fileinput-remove fileinput-remove-button">
-                        <i class="glyphicon glyphicon-trash"></i> <span class="hidden-xs">Remove</span></button>
-                      <button type="button" tabindex="500" title="Abort ongoing upload" class="btn btn-default hide fileinput-cancel fileinput-cancel-button">
-                        <i class="glyphicon glyphicon-ban-circle"></i> <span class="hidden-xs">Cancel</span></button>
-                      <button type="submit" tabindex="500" title="Upload selected files" class="btn btn-default fileinput-upload fileinput-upload-button">
-                        <i class="glyphicon glyphicon-upload"></i> <span class="hidden-xs">Upload</span></button>
                       <div tabindex="500" class="btn btn-primary btn-file">
                         <i class="glyphicon glyphicon-folder-open"></i>&nbsp;
-                        <span class="hidden-xs">Browse …</span><input class="file" id="featured-img" type="file"></div>
-                    </div>
-                  </div>
-                </div>
-                <br>
-                <br>
-                <label class="control-label">Other Images</label>
-                <div class="file-input file-input-new">
-                  <div class="kv-upload-progress hide">
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
-                        0%
+                        <span class="hidden-xs">Browse …</span><%= f.file_field :images, class: "file" %>
                       </div>
                     </div>
                   </div>
-                  <div class="input-group file-caption-main">
-                    <div tabindex="500" class="form-control file-caption  kv-fileinput-caption">
-                      <div class="file-caption-name"></div>
-                    </div>
+                  <br>
+                  <br>
 
-                    <div class="input-group-btn">
-                      <button type="button" tabindex="500" title="Clear selected files" class="btn btn-default fileinput-remove fileinput-remove-button">
-                        <i class="glyphicon glyphicon-trash"></i> <span class="hidden-xs">Remove</span></button>
-                      <button type="button" tabindex="500" title="Abort ongoing upload" class="btn btn-default hide fileinput-cancel fileinput-cancel-button">
-                        <i class="glyphicon glyphicon-ban-circle"></i> <span class="hidden-xs">Cancel</span></button>
-                      <button type="submit" tabindex="500" title="Upload selected files" class="btn btn-default fileinput-upload fileinput-upload-button">
-                        <i class="glyphicon glyphicon-upload"></i> <span class="hidden-xs">Upload</span></button>
-                      <div tabindex="500" class="btn btn-primary btn-file">
-                        <i class="glyphicon glyphicon-folder-open"></i>&nbsp;
-                        <span class="hidden-xs">Browse …</span><input class="file" data-show-preview="false" id="gallery-img-a" type="file">
-                      </div>
-                    </div>
-                  </div>
                 </div>
-                <br>
-                <div class="file-input file-input-new">
-                  <div class="kv-upload-progress hide">
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
-                        0%
-                      </div>
-                    </div>
-                  </div>
-                  <div class="input-group file-caption-main">
-                    <div tabindex="500" class="form-control file-caption  kv-fileinput-caption">
-                      <div class="file-caption-name"></div>
-                    </div>
-
-                    <div class="input-group-btn">
-                      <button type="button" tabindex="500" title="Clear selected files" class="btn btn-default fileinput-remove fileinput-remove-button">
-                        <i class="glyphicon glyphicon-trash"></i> <span class="hidden-xs">Remove</span></button>
-                      <button type="button" tabindex="500" title="Abort ongoing upload" class="btn btn-default hide fileinput-cancel fileinput-cancel-button">
-                        <i class="glyphicon glyphicon-ban-circle"></i> <span class="hidden-xs">Cancel</span></button>
-                      <button type="submit" tabindex="500" title="Upload selected files" class="btn btn-default fileinput-upload fileinput-upload-button">
-                        <i class="glyphicon glyphicon-upload"></i> <span class="hidden-xs">Upload</span></button>
-                      <div tabindex="500" class="btn btn-primary btn-file">
-                        <i class="glyphicon glyphicon-folder-open"></i>&nbsp;
-                        <span class="hidden-xs">Browse …</span><input class="file" data-show-preview="false" id="gallery-img-b" type="file">
-                      </div>
-                    </div>
-                  </div>
+                <p class="help-block">Add up to 4 photos. Use a real image of your product, not catalogs.</p>
+                <div class="page-ads box">
+                  <input class="btn btn-common" type="submit" value="Submit">
                 </div>
-                <br>
-                <div class="file-input file-input-new">
-                  <div class="kv-upload-progress hide">
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
-                        0%
-                      </div>
-                    </div>
-                  </div>
-                  <div class="input-group file-caption-main">
-                    <div tabindex="500" class="form-control file-caption  kv-fileinput-caption">
-                      <div class="file-caption-name"></div>
-                    </div>
-
-                    <div class="input-group-btn">
-                      <button type="button" tabindex="500" title="Clear selected files" class="btn btn-default fileinput-remove fileinput-remove-button">
-                        <i class="glyphicon glyphicon-trash"></i> <span class="hidden-xs">Remove</span></button>
-                      <button type="button" tabindex="500" title="Abort ongoing upload" class="btn btn-default hide fileinput-cancel fileinput-cancel-button">
-                        <i class="glyphicon glyphicon-ban-circle"></i> <span class="hidden-xs">Cancel</span></button>
-                      <button type="submit" tabindex="500" title="Upload selected files" class="btn btn-default fileinput-upload fileinput-upload-button">
-                        <i class="glyphicon glyphicon-upload"></i> <span class="hidden-xs">Upload</span></button>
-                      <div tabindex="500" class="btn btn-primary btn-file">
-                        <i class="glyphicon glyphicon-folder-open"></i>&nbsp;
-                        <span class="hidden-xs">Browse …</span><input class="file" data-show-preview="false" id="gallery-img-c" type="file">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <br>
-                <div class="file-input file-input-new">
-                  <div class="kv-upload-progress hide">
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
-                        0%
-                      </div>
-                    </div>
-                  </div>
-                  <div class="input-group file-caption-main">
-                    <div tabindex="500" class="form-control file-caption  kv-fileinput-caption">
-                      <div class="file-caption-name"></div>
-                    </div>
-
-                    <div class="input-group-btn">
-                      <button type="button" tabindex="500" title="Clear selected files" class="btn btn-default fileinput-remove fileinput-remove-button">
-                        <i class="glyphicon glyphicon-trash"></i> <span class="hidden-xs">Remove</span></button>
-                      <button type="button" tabindex="500" title="Abort ongoing upload" class="btn btn-default hide fileinput-cancel fileinput-cancel-button">
-                        <i class="glyphicon glyphicon-ban-circle"></i> <span class="hidden-xs">Cancel</span></button>
-                      <button type="submit" tabindex="500" title="Upload selected files" class="btn btn-default fileinput-upload fileinput-upload-button">
-                        <i class="glyphicon glyphicon-upload"></i> <span class="hidden-xs">Upload</span></button>
-                      <div tabindex="500" class="btn btn-primary btn-file">
-                        <i class="glyphicon glyphicon-folder-open"></i>&nbsp;
-                        <span class="hidden-xs">Browse …</span><input class="file" data-show-preview="false" id="gallery-img-d" type="file">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <p class="help-block">Add up to 4 photos. Use a real image of your product, not catalogs.</p>
-              <div class="page-ads box">
-                <input class="btn btn-common" type="submit" value="Submit">
-              </div>
             <% end %>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
   </header>
 </div>
 

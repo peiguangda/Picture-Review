@@ -6,15 +6,15 @@ class PicturesController < ApplicationController
   end
 
   def show
-    @picture = Picture.find(params[:id])
+    @picture = Picture.find params[:id]
     render :show
   end
 
   def create
-    @picture = current_user.pictures.new
-      picture_params
+    @picture = current_user.pictures.new picture_params
     if @picture.save
       flash[:success] = "Post picture successfull!"
+      redirect_to new_picture_path
     else
       flash[:danger] = "Post picture fails!"
       render :new
@@ -22,6 +22,6 @@ class PicturesController < ApplicationController
   end
 
   def picture_params
-    params.require(:picture).permit :category, :name, :description, :price
+    params.require(:picture).permit :category, :name, :description, :price, :images
   end
 end

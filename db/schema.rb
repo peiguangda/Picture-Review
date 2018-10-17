@@ -13,9 +13,10 @@
 ActiveRecord::Schema.define(version: 2018_10_09_183141) do
 
   create_table "pictures", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "category"
+    t.string "name", null: false
+    t.string "description", null: false
+    t.string "category", null: false
+    t.string "images", null: false
     t.float "price"
     t.boolean "negotiable", default: false
     t.float "avarage_rate"
