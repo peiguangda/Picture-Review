@@ -11,10 +11,14 @@
           <div class="photo-form-wrapper clearfix">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}) do |f| %>
               <%= devise_error_messages! %>
+              <div class="field">
+                <%= f.text_field :username, autocomplete: "username",
+                                 placeholder: "Username" %>
 
+              </div>
               <div class="field">
                 <%= f.email_field :email, autofocus: true, autocomplete: "email",
-                                  placeholder: "Email Address", class: "form-email" %>
+                                  placeholder: "Email Address", class: "form-email", disabled: "true" %>
 
               </div>
 
