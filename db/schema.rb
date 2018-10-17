@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_16_101224) do
+ActiveRecord::Schema.define(version: 2018_10_09_183141) do
 
   create_table "pictures", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "category"
+    t.string "name", null: false
+    t.string "description", null: false
+    t.string "category", null: false
+    t.string "images", null: false
     t.float "price"
     t.boolean "negotiable", default: false
     t.float "avarage_rate"
@@ -25,7 +26,6 @@ ActiveRecord::Schema.define(version: 2018_10_16_101224) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "images"
     t.index ["user_id"], name: "index_pictures_on_user_id"
   end
 
