@@ -10,6 +10,7 @@ class PicturesController < ApplicationController
     render :show
   end
 
+
   def create
     @picture = current_user.pictures.new picture_params
     if @picture.save
@@ -20,6 +21,7 @@ class PicturesController < ApplicationController
       render :new
     end
   end
+
 
   def picture_params
     params.require(:picture).permit :category, :name, :description, :price, :images

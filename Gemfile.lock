@@ -42,6 +42,7 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts_as_votable (0.11.1)
     arel (9.0.0)
     ast (2.4.0)
     autoprefixer-rails (9.2.0)
@@ -66,6 +67,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    commontator (5.1.0)
+      jquery-rails
+      rails (>= 5.0)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     devise (4.5.0)
@@ -217,11 +221,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_votable (~> 0.11.1)
   bootsnap (>= 1.1.0)
   bootstrap-sass (= 3.3.7)
   byebug
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
+  commontator (~> 5.1.0)
   devise
   font-awesome-rails
   jbuilder (~> 2.5)
@@ -246,4 +252,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.5
+   1.16.6
