@@ -23,6 +23,8 @@ gem "carrierwave", "~> 1.0"
 gem "mini_magick"
 gem "commontator", "~> 5.1.0"
 gem "acts_as_votable", "~> 0.11.1"
+gem "rails_admin"
+
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
 end
