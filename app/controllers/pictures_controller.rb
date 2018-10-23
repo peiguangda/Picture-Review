@@ -10,6 +10,10 @@ class PicturesController < ApplicationController
     render :show
   end
 
+  def pictures_search
+    @q = current_user.pictures.search(params[:q])
+    @result = Kaminari.paginate_array(@q.result).page(params[:page]).per(3)
+  end
 
   def create
     @picture = current_user.pictures.new picture_params

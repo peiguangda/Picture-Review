@@ -52,10 +52,9 @@ ActiveRecord::Schema.define(version: 2018_10_20_150915) do
   end
 
   create_table "pictures", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "description", null: false
-    t.string "category", null: false
-    t.string "images", null: false
+    t.string "name"
+    t.string "description"
+    t.string "category"
     t.float "price"
     t.boolean "negotiable", default: false
     t.float "avarage_rate"

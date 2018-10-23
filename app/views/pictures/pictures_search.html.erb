@@ -11,7 +11,7 @@
           <h1 class="text-white">Each picture is a life worthy of humanity</h1>
           <p class="lead text-white">Welcome to Diamond Team</p>
         </div>
-         <%= search_form_for @q, :url => url_for(:controller => "pictures", :action => "pictures_search") do |f| %>
+           <%= search_form_for @q, :url => url_for(:controller => "pictures", :action => "pictures_search") do |f| %>
             <div id="custom-search-input">
            <div class="input-group">
                <%= f.search_field :name_cont, class: "search-query",placeholder: "Please select the picture you want to search" %>
@@ -26,18 +26,19 @@
   </header>
 </div>
 <div style="background: white">
-  <% if user_signed_in? %>
     <section class="popular">
       <div class="container">
         <div class="title text-center m-b-30">
-          <h2>Your painting and artwork</h2>
+          <h2>The picture you need to find</h2>
           <p class="lead">Enjoy the beauty of art</p>
         </div>
-    <%= paginate @picture, theme: "twitter-bootstrap-4" %>
+    <% if !@result.empty? %>
+
+    <%= paginate @result, theme: "twitter-bootstrap-4" %>
         <div class="row">
 
           <!-- Each popular food item starts -->
-          <% @picture.each do |p| %>
+          <% @result.each do |p| %>
             <div class="col-md-4 food-item">
               <div class="food-item-wrap">
                 <div class="figure-wrap bg-image">
@@ -62,9 +63,12 @@
             </div>
           <% end %>
         </div>
-
+      <% else %>
+  <div class="alert display: inline-block">
+    <i class="fa fa-hand-o-right" aria-hidden="true"></i> <h4 style="color: red">No imformation</h4>
+  </div>
+  <% end %>
       </div>
     </section>
 
-  <% end %>
 </div>
