@@ -52,9 +52,10 @@ ActiveRecord::Schema.define(version: 2018_10_20_150915) do
   end
 
   create_table "pictures", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "category"
+    t.string "name", null: false
+    t.string "description", null: false
+    t.string "category", null: false
+    t.string "images", null: false
     t.float "price"
     t.boolean "negotiable", default: false
     t.float "avarage_rate"
@@ -78,7 +79,7 @@ ActiveRecord::Schema.define(version: 2018_10_20_150915) do
     t.string "username", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.integer "role"
+    t.integer "role", default: 0, null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

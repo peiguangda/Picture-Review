@@ -13,10 +13,9 @@ module Commontator
       @per_page = params[:per_page] || @thread.config.comments_per_page
 
       respond_to do |format|
-        format.html { redirect_to @thread }
+        format.html{redirect_to @thread}
         format.js
       end
-
     end
 
     # POST /threads/1/comments
@@ -29,9 +28,9 @@ module Commontator
       subscribe_mentioned if Commontator.mentions_enabled
 
       respond_to do |format|
-        if  !params[:cancel].nil?
-          format.html { redirect_to @thread }
-          format.js { render :cancel }
+        if !params[:cancel].nil?
+          format.html{redirect_to @thread}
+          format.js{render :cancel}
         elsif @comment.save
           sub = @thread.config.thread_subscription.to_sym
           @thread.subscribe(@user) if sub == :a || sub == :b
@@ -39,11 +38,11 @@ module Commontator
 
           @per_page = params[:per_page] || @thread.config.comments_per_page
 
-          format.html { redirect_to @thread }
+          format.html{redirect_to @thread}
           format.js
         else
-          format.html { redirect_to @thread }
-          format.js { render :new }
+          format.html{redirect_to @thread}
+          format.js{render :new}
         end
       end
     end
@@ -53,7 +52,7 @@ module Commontator
       security_transgression_unless @comment.can_be_edited_by?(@user)
 
       respond_to do |format|
-        format.html { redirect_to @thread }
+        format.html{redirect_to @thread}
         format.js
       end
     end
@@ -67,14 +66,14 @@ module Commontator
 
       respond_to do |format|
         if !params[:cancel].nil?
-          format.html { redirect_to @thread }
-          format.js { render :cancel }
+          format.html{redirect_to @thread}
+          format.js{render :cancel}
         elsif @comment.save
-          format.html { redirect_to @thread }
+          format.html{redirect_to @thread}
           format.js
         else
-          format.html { redirect_to @thread }
-          format.js { render :edit }
+          format.html{redirect_to @thread}
+          format.js{render :edit}
         end
       end
     end
@@ -83,14 +82,14 @@ module Commontator
     def delete
       security_transgression_unless @comment.can_be_deleted_by?(@user)
 
-      @comment.errors.add(:base, t('commontator.comment.errors.already_deleted')) \
+      @comment.errors.add(:base, t("commontator.comment.errors.already_deleted")) \
         unless @comment.delete_by(@user)
 
       if @comment.can_be_deleted_by?(@user)
         @comment.destroy
         respond_to do |format|
-          format.html { redirect_to @thread }
-          format.js{ render :delete }
+          format.html{redirect_to @thread}
+          format.js{render :delete}
         end
       end
 
@@ -104,12 +103,12 @@ module Commontator
     def undelete
       security_transgression_unless @comment.can_be_deleted_by?(@user)
 
-      @comment.errors.add(:base, t('commontator.comment.errors.not_deleted')) \
+      @comment.errors.add(:base, t("commontator.comment.errors.not_deleted")) \
         unless @comment.undelete_by(@user)
 
       respond_to do |format|
-        format.html { redirect_to @thread }
-        format.js { render :delete }
+        format.html{redirect_to @thread}
+        format.js{render :delete}
       end
     end
 
@@ -120,21 +119,21 @@ module Commontator
       @comment.upvote_from @user
 
       respond_to do |format|
-        format.html { redirect_to @thread }
-        format.js { render :vote }
+        format.html{redirect_to @thread}
+        format.js{render :vote}
       end
     end
 
     # PUT /comments/1/downvote
     def downvote
-      security_transgression_unless @comment.can_be_voted_on_by?(@user) &&\
-        @comment.thread.config.comment_voting.to_sym == :ld
+      security_transgression_unless @comment.can_be_voted_on_by?(@user) && \
+                                    @comment.thread.config.comment_voting.to_sym == :ld
 
       @comment.downvote_from @user
 
       respond_to do |format|
-        format.html { redirect_to @thread }
-        format.js { render :vote }
+        format.html{redirect_to @thread}
+        format.js{render :vote}
       end
     end
 
@@ -145,8 +144,8 @@ module Commontator
       @comment.unvote voter: @user
 
       respond_to do |format|
-        format.html { redirect_to @thread }
-        format.js { render :vote }
+        format.html{redirect_to @thread}
+        format.js{render :vote}
       end
     end
 
@@ -159,7 +158,7 @@ module Commontator
     end
 
     def subscribe_mentioned
-      Commontator.commontator_mentions(@user, @thread, '').where(id: params[:mentioned_ids]).each do |user|
+      Commontator.commontator_mentions(@user, @thread, "").where(id: params[:mentioned_ids]).each do |user|
         @thread.subscribe(user)
       end
     end
