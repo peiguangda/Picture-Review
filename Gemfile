@@ -1,28 +1,30 @@
 source "https://rubygems.org"
-git_source(:github) {|repo| "https://github.com/#{repo}.git"}
+git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.5.1"
 
+gem "acts_as_votable", "~> 0.11.1"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap-sass", "3.3.7"
+gem "bootstrap4-kaminari-views"
+gem "carrierwave", "~> 1.0"
 gem "coffee-rails", "~> 4.2"
+gem "commontator", "~> 5.1.0"
 gem "font-awesome-rails"
 gem "jbuilder", "~> 2.5"
+gem "jquery-rails"
+gem "kaminari"
+gem "mini_magick"
+gem "owlcarousel-rails"
 gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.1"
+gem "rails_admin"
+gem "ransack", git: "git://github.com/ernie/ransack.git"
 gem "sass-rails", "~> 5.0"
 gem "sqlite3"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
-gem "kaminari"
-gem "jquery-rails"
-gem "ransack", :git => "git://github.com/ernie/ransack.git"
-gem "bootstrap4-kaminari-views"
-gem "owlcarousel-rails"
-gem "carrierwave", "~> 1.0"
-gem "mini_magick"
-gem "commontator", "~> 5.1.0"
-gem "acts_as_votable", "~> 0.11.1"
+
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
 end

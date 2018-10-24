@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:show, :create]
+  before_action :check_role
 
   def new
     @picture = Picture.new
@@ -11,8 +12,8 @@ class PicturesController < ApplicationController
   end
 
   def pictures_search
-    @q = current_user.pictures.search(params[:q])
-    @result = Kaminari.paginate_array(@q.result).page(params[:page]).per(3)
+    @q = Picture.search(params[:q])
+    @result = Kaminari.paginate_array(@q.result).page(params[:page]).per 6
   end
 
   def create
@@ -26,8 +27,16 @@ class PicturesController < ApplicationController
     end
   end
 
+  private
 
   def picture_params
-    params.require(:picture).permit :category, :name, :description, :price, :images
+    params.require(:picture).permit :category, :name,
+      :description, :price, :images
+  end
+
+  def check_role
+    if user_signed_in?
+      redirect_to "/admin" if current_user.role == "admin"
+    end
   end
 end

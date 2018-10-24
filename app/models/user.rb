@@ -5,4 +5,6 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :validatable
   has_many :pictures
   acts_as_commontator
+
+  enum role: {user: 0, admin: 1}
 end

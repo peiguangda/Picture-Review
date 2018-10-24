@@ -9,7 +9,7 @@ module Commontator
       @show_all = params[:show_all] && @thread.can_be_edited_by?(@user)
 
       respond_to do |format|
-        format.html { redirect_to main_app.polymorphic_path(@thread.commontable) }
+        format.html{redirect_to main_app.polymorphic_path(@thread.commontable)}
         format.js
       end
     end
@@ -18,14 +18,14 @@ module Commontator
     def close
       security_transgression_unless @thread.can_be_edited_by?(@user)
 
-      @thread.errors.add(:base, t('commontator.thread.errors.already_closed')) \
+      @thread.errors.add(:base, t("commontator.thread.errors.already_closed")) \
         unless @thread.close(@user)
 
       @show_all = true
 
       respond_to do |format|
-        format.html { redirect_to @thread }
-        format.js { render :show }
+        format.html{redirect_to @thread}
+        format.js{render :show}
       end
     end
 
@@ -33,14 +33,14 @@ module Commontator
     def reopen
       security_transgression_unless @thread.can_be_edited_by?(@user)
 
-      @thread.errors.add(:base, t('commontator.thread.errors.not_closed')) \
+      @thread.errors.add(:base, t("commontator.thread.errors.not_closed")) \
         unless @thread.reopen
 
       @show_all = true
 
       respond_to do |format|
-        format.html { redirect_to @thread }
-        format.js { render :show }
+        format.html{redirect_to @thread}
+        format.js{render :show}
       end
     end
 
@@ -50,7 +50,7 @@ module Commontator
       query = params[:q].to_s
 
       if query.size < 3
-        render json: { errors: ['Query string is too short (minimum 3 characters)'] },
+        render json: {errors: ["Query string is too short (minimum 3 characters)"]},
                status: :unprocessable_entity
       else
         render json: serialized_mentions(query)
@@ -59,10 +59,10 @@ module Commontator
 
     protected
 
-    def serialized_mentions(query)
-      { mentions: Commontator.commontator_mentions(@user, @thread, query).map do |user|
-        { id: user.id, name: Commontator.commontator_name(user), type: 'user' }
-      end }
+    def serialized_mentions query
+      {mentions: Commontator.commontator_mentions(@user, @thread, query).map do |user|
+        {id: user.id, name: Commontator.commontator_name(user), type: "user"}
+      end}
     end
   end
 end
