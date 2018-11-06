@@ -20,7 +20,6 @@
         <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
           <div class="article-body">
             <p class="lead">
-              <!--              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.-->
               <%= @picture.name %>
             </p>
             <a>Rating :</a>
@@ -33,27 +32,21 @@
             </div>
 
             <figure>
-              <a > <%= image_tag "damcuoichuot.jpg" %></a>
+              <%= image_tag @picture.images.url if @picture.images? %>
               <figcaption><%= @picture.name %></figcaption>
             </figure>
-            <h2>Description :</h2>
-            <p>
-              <!--              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident-->
-              Nhân vật mèo nhận lễ trong tư thế trang trọng, có đôi chút dò xét nhưng cũng tỏ rõ thái độ tôn trọng ngày lễ lớn của đôi vợ chồng mới. Theo thang bậc của tự nhiên, sự chia sẻ này là cách để họ hàng nhà chuột giải quyết mâu thuẫn tự sinh giữa chuột và mèo. Họ hàng nhà chuột, vốn hiểu sự yên ổn của mình cần có cả sự no đủ của mèo nên đã “mừng mà làm” (“hưng tác”, chữ trên đầu nhân vật chuột thứ hai).
-            </p>
-          </div><!--end of article body-->
+            <h3><%= @picture.description %></h3>
+          </div>
         </div>
-      </div><!--end of row-->
+      </div>
 
       <div class="row">
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
           <br>
           <div class="price">
-            <span class="price"><%= @picture.price%> VND</span>
+            <span class="price"><%= @picture.price.round %> VND</span>
             <a href="#" class="btn theme-btn-dash pull-right">Order Now</a>
           </div>
-
-
 
 
         </div>

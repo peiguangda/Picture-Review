@@ -1,5 +1,5 @@
 <div class="main-container">
-  <header class="fullscreen-element no-pad centered-text  okconde">
+  <header class="fullscreen-element no-pad centered-text okconde home_fix">
     <div class="background-image-holder parallax-background overlay">
       <a href="#" class="background-image"> <%= image_tag "background.jpg" %></a>
     </div>
@@ -14,7 +14,8 @@
         <%= search_form_for @q, :url => url_for(:controller => "pictures", :action => "pictures_search") do |f| %>
           <div id="custom-search-input">
             <div class="input-group">
-              <%= f.search_field :name_cont, class: "search-query", placeholder: "Please select the picture you want to search" %>
+              <%= f.search_field :user_username_cont, class: "search-query search_username", placeholder: "Author's name" %>
+              <%= f.search_field :name_cont, class: "search-query search_picturename", placeholder: "Enter picture name" %>
               <span class="input-group-btn">
                <%= f.submit "Search", class: "btn_search" %>
                   </span>

@@ -14,9 +14,17 @@ user = User.create!({
    password_confirmation: "123456",
 });
 
+user1 = User.create!({
+   username: "Quang Dai",
+   email: "abc@gmail.com",
+   password: "123456",
+   role: 1,
+   password_confirmation: "123456",
+});
+
 uploader = Rails.root.join("public/public/uploads/download.jpeg").open
 
-user.pictures.create!({
+user1.pictures.create!({
     name: "Đám Cưới Chuột",
     description: "Buc tranh rat dep",
     category: "Tranh dan gian",
@@ -120,7 +128,7 @@ user.pictures.create!({
     price_rate: 1,
 })
 
-user.pictures.create!({
+user1.pictures.create!({
     name: "Cánh Đồng Làng Quê",
     description: "Buc tranh rat dep",
     category: "Tranh dan gian",

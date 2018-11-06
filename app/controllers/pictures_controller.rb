@@ -35,8 +35,7 @@ class PicturesController < ApplicationController
   end
 
   def check_role
-    if user_signed_in?
-      redirect_to "/admin" if current_user.role == "admin"
-    end
+    return unless user_signed_in?
+    redirect_to "/admin" if current_user.role == "admin"
   end
 end
