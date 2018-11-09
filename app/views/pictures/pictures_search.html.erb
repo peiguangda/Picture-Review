@@ -15,7 +15,7 @@
           <div id="custom-search-input">
             <div class="input-group">
               <%= f.search_field :user_username_cont, class: "search-query search_username", placeholder: "Author's name" %>
-              <%= f.search_field :name_cont, class: "search-query search_picturename", placeholder: "Enter picture name" %>
+              <%= f.search_field :name_cont, class: "search-query search_picturename", placeholder: " Picture's name" %>
               <span class="input-group-btn">
                <%= f.submit "Search", class: "btn_search" %>
                   </span>
@@ -53,7 +53,7 @@
                   <h5><%= link_to p.name, picture_path(p) %></h5>
                   <div class="product-name"><%= p.category %></div>
                   <div class="price-btn-block"><span class="price"><%= p.price %> VND</span>
-                    <a href="#" class="btn theme-btn-dash pull-right">Order Now</a></div>
+                  </div>
                 </div>
                 <div class="restaurant-block">
                   <div class="left">
