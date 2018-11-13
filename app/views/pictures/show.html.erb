@@ -22,38 +22,133 @@
             <p class="lead">
               <%= @picture.name %>
             </p>
-            <a>Rating :</a>
-            <div class="rating2">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-o"></i>
+            <div class="price">
+              <span class="price"><%= @picture.price.round %> VND</span>
             </div>
-
+            <br>
+            <div class="rating2 fa-show-picture" id="fa-show-picture" score=<%= @picture.average_rate %>>
+            </div>
             <figure>
               <%= image_tag @picture.images.url if @picture.images? %>
-              <figcaption><%= @picture.name %></figcaption>
+              <figcaption><%= @picture.description %></figcaption>
             </figure>
-            <h3><%= @picture.description %></h3>
           </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+          <h3 class="valuate_text">Valuate</h3><br>
+          <% if @rate %>
+            <div class="rating2 valuate" id="star-rating-design" score=<%= @rate.design_rate %> picture_id=<%= @picture.id %>>
+              Design
+            </div>
+            <br>
+            <div class="rating2 valuate" id="star-rating-price" score=<%= @rate.price_rate %> picture_id=<%= @picture.id %>>
+              Price
+            </div>
+          <% else %>
+            <div class="rating2 valuate" id="star-rating-design" score="0" picture_id=<%= @picture.id %>>
+              Design
+            </div>
+            <br>
+            <div class="rating2 valuate" id="star-rating-price" score="0" picture_id=<%= @picture.id %>>
+              Price
+            </div>
+          <% end %>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-          <br>
-          <div class="price">
-            <span class="price"><%= @picture.price.round %> VND</span>
-          </div>
-
-
-        </div>
-      </div><!--end of row-->
-
       <%= commontator_thread(@picture) %>
-
     </div><!--end of container-->
   </section>
 </div>
 
+<script>
+    $('div#star-rating-design').raty({
+        path: '/assets/',
+        number: 5,
+        score: function () {
+            return $(this).attr('score');
+        },
+        scoreName: 'review[rating]',
+        readOnly: false,
+        starOn: 'star-on.png',
+        half: true,
+        starType: 'img',
+        click: function (score) {
+            var picture_id = $(this).attr('picture_id');
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                url: '/rating_pictures/',
+                dataType: 'json',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+                },
+                data: {
+                    design_rate: score,
+                    picture_id: picture_id,
+                },
+                success: function (data) {
+                    alert(data.message);
+                },
+                error: function (data) {
+                    alert(data.message);
+                }
+            });
+        }
+    });
+
+    $('div#star-rating-price').raty({
+        path: '/assets/',
+        number: 5,
+        score: function () {
+            return $(this).attr('score');
+        },
+        scoreName: 'review[rating]',
+        readOnly: false,
+        starOn: 'star-on.png',
+        half: true,
+        starType: 'img',
+        click: function (score) {
+            var picture_id = $(this).attr('picture_id');
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                url: '/rating_pictures/',
+                dataType: 'json',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+                },
+                data: {
+                    price_rate: score,
+                    picture_id: picture_id,
+                },
+                success: function (data) {
+                    alert(data.message);
+                },
+                error: function (data) {
+                    alert(data.message);
+                }
+            });
+        }
+    });
+    $('div#fa-show-picture').raty({
+        path: '/assets/',
+        number: 5,
+        readOnly: true,
+        score: function () {
+            return $(this).attr('score');
+        },
+        scoreName: 'review[rating]',
+        starOn: 'star-on.png',
+        half: true,
+        starType: 'img',
+    });
+</script>

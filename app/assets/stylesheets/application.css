@@ -5,4 +5,5 @@
  *= require owl.carousel
  *= require owl.theme
  *= require commontator/application
+ *= require jquery.raty
  */
