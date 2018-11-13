@@ -8,6 +8,7 @@ class PicturesController < ApplicationController
 
   def show
     @picture = Picture.find params[:id]
+    @rate = RatingPicture.find_by user_id: current_user.id, picture_id: @picture.id
     render :show
   end
 
@@ -31,7 +32,7 @@ class PicturesController < ApplicationController
 
   def picture_params
     params.require(:picture).permit :category, :name,
-      :description, :price, :images
+                                    :description, :price, :images
   end
 
   def check_role

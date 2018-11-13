@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_20_150915) do
+ActiveRecord::Schema.define(version: 2018_11_13_092700) do
 
   create_table "commontator_comments", force: :cascade do |t|
     t.string "creator_type"
@@ -58,21 +58,23 @@ ActiveRecord::Schema.define(version: 2018_10_20_150915) do
     t.string "images", null: false
     t.float "price"
     t.boolean "negotiable", default: false
-    t.float "avarage_rate"
-    t.float "quality_rate"
-    t.float "design_rate"
-    t.float "price_rate"
+    t.float "average_rate", default: 3.0
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_pictures_on_user_id"
   end
 
-  create_table "sells", force: :cascade do |t|
+  create_table "rating_pictures", force: :cascade do |t|
     t.integer "user_id"
     t.integer "picture_id"
+    t.float "design_rate", default: 3.0
+    t.float "price_rate", default: 3.0
+    t.float "average_rate", default: 3.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["picture_id"], name: "index_rating_pictures_on_picture_id"
+    t.index ["user_id"], name: "index_rating_pictures_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

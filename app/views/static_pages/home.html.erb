@@ -36,8 +36,6 @@
         </div>
         <%= paginate @picture, theme: "twitter-bootstrap-4" %>
         <div class="row">
-
-          <!-- Each popular food item starts -->
           <% @picture.each do |p| %>
             <div class="col-md-4 food-item">
               <div class="food-item-wrap">
@@ -48,11 +46,10 @@
                   <div class="review pull-right"><a href="#">198 reviews</a></div>
                 </div>
                 <div class="content">
-                  <!--                                <h5><a href=""><%#= p.name %></a></h5>-->
                   <h5><%= link_to p.name, picture_path(p) %></h5>
                   <div class="product-name"><%= p.category %></div>
                   <div class="price-btn-block"><span class="price"><%= p.price.round %> VND</span>
-                    </div>
+                  </div>
                 </div>
                 <div class="restaurant-block">
                   <div class="left">

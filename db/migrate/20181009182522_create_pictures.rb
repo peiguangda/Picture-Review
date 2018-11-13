@@ -7,10 +7,7 @@ class CreatePictures < ActiveRecord::Migration[5.2]
       t.string :images,  null: false
       t.float :price
       t.boolean :negotiable, default: false
-      t.float :avarage_rate
-      t.float :quality_rate
-      t.float :design_rate
-      t.float :price_rate
+      t.float :average_rate, default: 3
       t.references :user, foreign_key: true
 
       t.timestamps

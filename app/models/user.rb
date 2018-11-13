@@ -3,8 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
-  has_many :pictures
   acts_as_commontator
+  has_many :pictures
+  has_many :rating_pictures
 
   enum role: {user: 0, admin: 1}
 end

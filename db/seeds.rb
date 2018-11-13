@@ -31,10 +31,6 @@ user1.pictures.create!({
     price: 1500000,
     images: uploader,
     negotiable: false,
-    avarage_rate: 1,
-    quality_rate: 1,
-    design_rate: 1,
-    price_rate: 1,
 })
 
 user.pictures.create!({
@@ -44,10 +40,6 @@ user.pictures.create!({
     price: 1500000,
     images: uploader,
     negotiable: false,
-    avarage_rate: 1,
-    quality_rate: 1,
-    design_rate: 1,
-    price_rate: 1,
 })
 
 user.pictures.create!({
@@ -57,10 +49,6 @@ user.pictures.create!({
     price: 1500000,
     images: uploader,
     negotiable: false,
-    avarage_rate: 1,
-    quality_rate: 1,
-    design_rate: 1,
-    price_rate: 1,
 })
 
 user.pictures.create!({
@@ -70,10 +58,6 @@ user.pictures.create!({
     price: 1500000,
     images: uploader,
     negotiable: false,
-    avarage_rate: 1,
-    quality_rate: 1,
-    design_rate: 1,
-    price_rate: 1,
 })
 
 user.pictures.create!({
@@ -83,10 +67,6 @@ user.pictures.create!({
     price: 1500000,
     images: uploader,
     negotiable: false,
-    avarage_rate: 1,
-    quality_rate: 1,
-    design_rate: 1,
-    price_rate: 1,
 })
 
 user.pictures.create!({
@@ -96,10 +76,6 @@ user.pictures.create!({
     price: 1500000,
     images: uploader,
     negotiable: false,
-    avarage_rate: 1,
-    quality_rate: 1,
-    design_rate: 1,
-    price_rate: 1,
 })
 
 user.pictures.create!({
@@ -109,10 +85,6 @@ user.pictures.create!({
     price: 1500000,
     images: uploader,
     negotiable: false,
-    avarage_rate: 1,
-    quality_rate: 1,
-    design_rate: 1,
-    price_rate: 1,
 })
 
 user.pictures.create!({
@@ -122,10 +94,6 @@ user.pictures.create!({
     price: 1500000,
     images: uploader,
     negotiable: false,
-    avarage_rate: 1,
-    quality_rate: 1,
-    design_rate: 1,
-    price_rate: 1,
 })
 
 user1.pictures.create!({
@@ -135,10 +103,6 @@ user1.pictures.create!({
     price: 1500000,
     images: uploader,
     negotiable: false,
-    avarage_rate: 1,
-    quality_rate: 1,
-    design_rate: 1,
-    price_rate: 1,
 })
 
 user.pictures.create!({
@@ -148,8 +112,4 @@ user.pictures.create!({
     price: 1500000,
     images: uploader,
     negotiable: false,
-    avarage_rate: 1,
-    quality_rate: 1,
-    design_rate: 1,
-    price_rate: 1,
 })
