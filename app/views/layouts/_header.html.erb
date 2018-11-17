@@ -9,7 +9,7 @@
 
             </span>
             <span class="alt-font"><i class="fa fa-envelope-open" aria-hidden="true"></i></i>hedspi@gmail.com</span>
-            <div class="pull-right">
+            <div class="pull-right" style="background-color: beige">
               <% if user_signed_in? %>
                 <%= link_to new_picture_path, class: "btn login-button btn-post" do %>
                   Post<span class="fa fa-plus-circle"></span>
@@ -20,8 +20,6 @@
                 <%= link_to "Login", new_user_session_path, class: "btn btn-primary login-button btn-xs" %>
                 <%= link_to "Signup", new_user_registration_path, class: "btn btn-primary btn-filled btn-xs" %>
               <% end %>
-              <a href="#" class="language"><%= image_tag "flag_vn.jpg" %></a>
-              <a href="#" class="language"> <%= image_tag "flag_japan.png" %></a>
             </div>
           </div>
         </div>
