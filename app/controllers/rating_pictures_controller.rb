@@ -38,7 +38,13 @@ class RatingPicturesController < ApplicationController
   end
 
   def update_picture_rate
-    @rate.picture.update_attributes average_rate: @rate.average_rate
+    rating_pictures = RatingPicture.select {|e| e.picture_id === @rate.picture_id}
+    sum = 0
+    rating_pictures.map do |rp|
+      sum += rp.average_rate
+    end
+    average_rate = sum/rating_pictures.count;
+    @rate.picture.update_attributes average_rate: average_rate
   end
 
   def check_role
