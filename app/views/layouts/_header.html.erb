@@ -9,16 +9,16 @@
 
             </span>
             <span class="alt-font"><i class="fa fa-envelope-open" aria-hidden="true"></i></i>hedspi@gmail.com</span>
-            <div class="pull-right" style="background-color: beige">
+            <div class="pull-right">
               <% if user_signed_in? %>
-                <%= link_to new_picture_path, class: "btn login-button btn-post" do %>
+                <%= link_to new_picture_path, class: "btn login-button btn-post header-btn" do %>
                   Post<span class="fa fa-plus-circle"></span>
                 <% end %>
-                <%= link_to current_user.email, edit_user_registration_path, class: "btn btn-primary login-button btn-xs" %>
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-primary login-button btn-xs" %>
+                <%= link_to current_user.email, edit_user_registration_path, class: "btn btn-primary login-button btn-xs header-btn" %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-primary login-button btn-xs header-btn" %>
               <% else %>
-                <%= link_to "Login", new_user_session_path, class: "btn btn-primary login-button btn-xs" %>
-                <%= link_to "Signup", new_user_registration_path, class: "btn btn-primary btn-filled btn-xs" %>
+                <%= link_to "Login", new_user_session_path, class: "btn btn-primary login-button btn-xs header-btn" %>
+                <%= link_to "Signup", new_user_registration_path, class: "btn btn-primary btn-filled btn-xs header-btn" %>
               <% end %>
             </div>
           </div>
