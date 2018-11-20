@@ -52,17 +52,59 @@
                 </div>
                 <div class="restaurant-block">
                   <div class="left">
-                    <a class="pull-left" href="#"><%= image_tag "logo1.png" %></a>
-                    <div class="pull-left right-text"><a href="#">Description</a> <span><%= p.description %></span>
+                    <div class="pull-left"><%= image_tag "logo1.png" %>Description</div>
+                    <div class="pull-left right-text"><span><%= p.description %></span>
                     </div>
                   </div>
-                  <div class="right-like-part pull-right"><i class="fa fa-heart-o"></i> <span>48</span></div>
                 </div>
               </div>
             </div>
           <% end %>
         </div>
 
+      </div>
+    </section>
+
+  <% else %>
+
+     <section class="popular">
+      <div class="container">
+        <div class="title text-center m-b-30">
+          <h2>All painting and artwork</h2>
+          <p class="lead">Enjoy the beauty of art</p>
+        </div>
+        <% @users.each do |t| %>
+        <% if !t.pictures.empty? %>
+        <% @ts = t.pictures.page(params[:page]).per 6 %>
+        <%= paginate @ts, theme: "twitter-bootstrap-4" %>
+        <div class="row">
+          <% @ts.each do |p| %>
+            <div class="col-md-4 food-item">
+              <div class="food-item-wrap">
+                <div class="figure-wrap bg-image">
+                  <%= image_tag p.images.url if p.images? %>
+                    <div class="rating2 fa-show-picture" id="fa-show-picture" score = <%= p.average_rate %>>
+                    </div>
+                </div>
+                <div class="content">
+                  <h5><%= link_to p.name, picture_path(p) %></h5>
+                  <div class="product-name"><%= p.category %></div>
+                  <div class="price-btn-block"><span class="price"><%= p.price.round %> VND</span>
+                  </div>
+                </div>
+                <div class="restaurant-block">
+                  <div class="left">
+                    <div class="pull-left"><%= image_tag "logo1.png" %>Description</div>
+                    <div class="pull-left right-text"><span><%= p.description %></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <% end %>
+        <% end %>
       </div>
     </section>
 

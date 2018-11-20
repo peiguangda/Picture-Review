@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
   before_action :check_role
 
   def home
+    @users = User.all
     return unless user_signed_in?
     @picture = current_user.pictures.page(params[:page]).per 6
   end
