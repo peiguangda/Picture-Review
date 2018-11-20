@@ -26,7 +26,7 @@ uploader = Rails.root.join("public/public/uploads/download.jpeg").open
 
 user1.pictures.create!({
     name: "Đám Cưới Chuột",
-    description: "Buc tranh rat dep",
+    description: "Buc tranh duoc lam tu nhung chat lieu tinh tuy nhat, mang den cam giac than quen cho nguoi xem, da dat nhieu giai thuong khap nam chau",
     category: "Tranh dan gian",
     price: 1500000,
     images: uploader,
@@ -35,7 +35,7 @@ user1.pictures.create!({
 
 user.pictures.create!({
     name: "Phong C",
-    description: "Buc tranh rat dep",
+    description: "Buc tranh duoc lam tu nhung chat lieu tinh tuy nhat, mang den cam giac than quen cho nguoi xem, da dat nhieu giai thuong khap nam chau",
     category: "Tranh dan gian",
     price: 1500000,
     images: uploader,
@@ -44,7 +44,7 @@ user.pictures.create!({
 
 user.pictures.create!({
     name: "Ảnh linh t",
-    description: "Buc tranh rat dep",
+    description: "Buc tranh duoc lam tu nhung chat lieu tinh tuy nhat, mang den cam giac than quen cho nguoi xem, da dat nhieu giai thuong khap nam chau",
     category: "Tranh dan gian",
     price: 1500000,
     images: uploader,
@@ -53,7 +53,7 @@ user.pictures.create!({
 
 user.pictures.create!({
     name: "Tranh dân gian",
-    description: "Buc tranh rat dep",
+    description: "Buc tranh duoc lam tu nhung chat lieu tinh tuy nhat, mang den cam giac than quen cho nguoi xem, da dat nhieu giai thuong khap nam chau",
     category: "Tranh dan gian",
     price: 1500000,
     images: uploader,
@@ -62,7 +62,7 @@ user.pictures.create!({
 
 user.pictures.create!({
     name: "Tranh dân gian",
-    description: "Buc tranh rat dep",
+    description: "Buc tranh duoc lam tu nhung chat lieu tinh tuy nhat, mang den cam giac than quen cho nguoi xem, da dat nhieu giai thuong khap nam chau",
     category: "Tranh dan gian",
     price: 1500000,
     images: uploader,
@@ -71,7 +71,7 @@ user.pictures.create!({
 
 user.pictures.create!({
     name: "Cảnh Làng Q",
-    description: "Buc tranh rat dep",
+    description: "Buc tranh duoc lam tu nhung chat lieu tinh tuy nhat, mang den cam giac than quen cho nguoi xem, da dat nhieu giai thuong khap nam chau",
     category: "Tranh dan gian",
     price: 1500000,
     images: uploader,
@@ -80,7 +80,7 @@ user.pictures.create!({
 
 user.pictures.create!({
     name: "Đám Cưới Chuột",
-    description: "Buc tranh rat dep",
+    description: "Buc tranh duoc lam tu nhung chat lieu tinh tuy nhat, mang den cam giac than quen cho nguoi xem, da dat nhieu giai thuong khap nam chau",
     category: "Tranh dan gian",
     price: 1500000,
     images: uploader,
@@ -89,7 +89,7 @@ user.pictures.create!({
 
 user.pictures.create!({
     name: "Đám Cưới Chuột",
-    description: "Buc tranh rat dep",
+    description: "Buc tranh duoc lam tu nhung chat lieu tinh tuy nhat, mang den cam giac than quen cho nguoi xem, da dat nhieu giai thuong khap nam chau",
     category: "Tranh dan gian",
     price: 1500000,
     images: uploader,
@@ -98,7 +98,7 @@ user.pictures.create!({
 
 user1.pictures.create!({
     name: "Cánh Đồng Làng Quê",
-    description: "Buc tranh rat dep",
+    description: "Buc tranh duoc lam tu nhung chat lieu tinh tuy nhat, mang den cam giac than quen cho nguoi xem, da dat nhieu giai thuong khap nam chau",
     category: "Tranh dan gian",
     price: 1500000,
     images: uploader,
@@ -107,7 +107,7 @@ user1.pictures.create!({
 
 user.pictures.create!({
     name: "Đám Cưới Chuột",
-    description: "Buc tranh rat dep",
+    description: "Buc tranh duoc lam tu nhung chat lieu tinh tuy nhat, mang den cam giac than quen cho nguoi xem, da dat nhieu giai thuong khap nam chau",
     category: "Tranh dan gian",
     price: 1500000,
     images: uploader,
