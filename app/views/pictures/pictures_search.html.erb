@@ -14,11 +14,13 @@
         <%= search_form_for @q, :url => url_for(:controller => "pictures", :action => "pictures_search") do |f| %>
           <div id="custom-search-input">
             <div class="input-group">
-              <%= f.search_field :user_username_cont, class: "search-query search_username", placeholder: "Author's name" %>
-              <%= f.search_field :name_cont, class: "search-query search_picturename", placeholder: " Picture's name" %>
+              <%= f.search_field :user_username_cont, class: "search-query search_username",
+                placeholder: "Poster" %>
+              <%= f.search_field :name_cont, class: "search-query search_picturename",
+                placeholder: " Picture's name" %>
               <span class="input-group-btn">
-               <%= f.submit "Search", class: "btn_search" %>
-                  </span>
+                <%= f.submit "", class: "btn_search" %>
+              </span>
             </div>
           </div>
         <% end %>
@@ -43,10 +45,12 @@
             <div class="col-md-4 food-item">
               <div class="food-item-wrap">
                 <div class="figure-wrap bg-image">
-                  <%= image_tag p.images.url if p.images? %>
+                  <% if p.images? %>
+                    <%= image_tag p.images.url, class: "resize-image" %>
+                  <% end %>
                   <div class="rating pull-left"><i class="fa fa-star"></i> <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i></div>
-                  <div class="review pull-right"><a href="#">198 reviews</a></div>
+                  <!-- <div class="review pull-right"><a href="#">198 reviews</a></div> -->
                 </div>
                 <div class="content">
                   <!--                                <h5><a href=""><%#= p.name %></a></h5>-->
@@ -57,11 +61,12 @@
                 </div>
                 <div class="restaurant-block">
                   <div class="left">
-                    <a class="pull-left" href="#"><%= image_tag "logo1.png" %></a>
-                    <div class="pull-left right-text"><a href="#">Description</a> <span><%= p.description %></span>
+                    <!-- <a class="pull-left" href="#"><%= image_tag "logo1.png" %></a> -->
+                    <div class="pull-left right-text">
+                      <span><%= truncate(p.description, length: 150, separator: " ") %></span>
                     </div>
                   </div>
-                  <div class="right-like-part pull-right"><i class="fa fa-heart-o"></i> <span>48</span></div>
+                  <!-- <div class="right-like-part pull-right"><i class="fa fa-heart-o"></i> <span>48</span></div> -->
                 </div>
               </div>
             </div>
