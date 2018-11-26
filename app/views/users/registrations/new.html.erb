@@ -17,6 +17,10 @@
               </div>
 
               <div class="field">
+                <%= f.text_field :username, placeholder: "Username" %>
+              </div>
+
+              <div class="field">
                 <% if @minimum_password_length %>
                   <em class="warning-text-signup">(<%= @minimum_password_length %> characters minimum)</em>
                 <% end %><br/>
