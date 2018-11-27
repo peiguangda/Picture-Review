@@ -25,9 +25,6 @@
             <div class="price">
               Poster: <%= @picture.user.username %>
             </div>
-            <div class="price">
-              <span class="price"><%= @picture.price.round %> VND</span>
-            </div>
             <br>
             <div class="rating2 fa-show-picture" id="fa-show-picture" score=<%= @picture.average_rate %>>
             </div>
@@ -101,7 +98,6 @@
             });
         }
     });
-
     $('div#star-rating-price').raty({
         path: '/assets/',
         number: 5,
