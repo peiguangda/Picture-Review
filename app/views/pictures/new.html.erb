@@ -17,17 +17,11 @@
               <div class="col-md-4 col-sm-12 search-col">
                 <div class="input-group-addon search-category-container">
                   <label class="styled-select"><span class="hidden-sm hidden-xs">Category </span>
-                    <%= f.select :category, [["The scenery", "scenery"], ["Portrait", "portrait"], ["routines", "routines"], ["Personals", "personals"]], class: "dropdown-product" %>
+                    <%= f.select :category, [["Tranh Dong Ho", "Tranh Dong Ho"], ["Tranh Son Mau", "Tranh Son Mau"], ["Tranh Lua", "Tranh Lua"], ["Tranh Xi Dau", "Tranh Xi Dau"]], class: "dropdown-product" %>
                   </label>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 search-col">
-                <div class="input-group-addon search-category-container">
-                  <label class="styled-select location-select"><span class="hidden-sm hidden-xs">Location </span>
-                    <%= f.select :category, [["Ha Noi", "hanoi"], ["Ho Chi Minh", "hochiminh"], ["Hue", "hue"], ["Da Nang", "danang"]], class: "dropdown-product" %>
-                  </label>
-                </div>
-              </div>
+
               <div class="row search-bar mb30 red-bg">
                 <div class="advanced-search">
                 </div>
@@ -47,12 +41,17 @@
                   <div class="form-group col-md-3 col-sm-5 col-xs-12">
                     <div class="input-group">
                       <%= f.text_field :price, class: "form-control", placeholder: "Price", type: "number" %>
-                      <span class="input-group-addon addon">VND</span>
+                      <span class="input-group-addon addon"
+                        style="padding: 10px;margin: 10px;">VND</span>
                     </div>
                   </div>
-                  <div class="col-md-2 col-sm-3 col-xs-12 checkbox form-control-static">
-                    <label><%= f.check_box :negotiable %><span class="checkbox-material"></span>Negotiable</label>
-                  </div>
+                  <!-- <div class="col-md-2 col-sm-3 col-xs-12 checkbox form-control-static">
+                    <label>
+                       # f.check_box :negotiable %>
+                      <span class="checkbox-material"></span>
+                      Negotiable
+                    </label>
+                  </div> -->
                 </div>
               </div>
               <h2 class="title-2">Add Images to Your Ad</h2>
@@ -76,6 +75,7 @@
                       </div>
                     </div>
                   </div>
+
                   <div class="input-group file-caption-main">
                     <div tabindex="500" class="form-control file-caption  kv-fileinput-caption">
                       <div class="file-caption-name"></div>
@@ -84,7 +84,8 @@
                     <div class="input-group-btn">
                       <div tabindex="500" class="btn btn-primary btn-file">
                         <i class="glyphicon glyphicon-folder-open"></i>&nbsp;
-                        <span class="hidden-xs">Browse …</span><%= f.file_field :images, class: "file" %>
+                        <span class="hidden-xs">Browse …</span>
+                        <%= f.file_field :images, class: "file" %>
                       </div>
                     </div>
                   </div>
@@ -92,10 +93,10 @@
                   <br>
 
                 </div>
-                <p class="help-block">Add up to 4 photos. Use a real image of your product, not catalogs.</p>
-                <div class="page-ads box">
+                <!-- <p class="help-block">Add up to 4 photos. Use a real image of your product, not catalogs.</p> -->
+                <!-- <div class="page-ads box"> -->
                   <input class="btn btn-common" type="submit" value="Submit">
-                </div>
+                <!-- </div> -->
             <% end %>
             </div>
           </div>

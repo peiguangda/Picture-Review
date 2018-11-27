@@ -20,10 +20,10 @@ class PicturesController < ApplicationController
   def create
     @picture = current_user.pictures.new picture_params
     if @picture.save
-      flash[:success] = "Post picture successfull!"
-      redirect_to new_picture_path
+      # flash[:success] = "Post picture successfull!"
+      redirect_to @picture
     else
-      flash[:danger] = "Post picture fails!"
+      # flash[:danger] = "Post picture fails!"
       render :new
     end
   end

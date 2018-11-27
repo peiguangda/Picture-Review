@@ -14,11 +14,13 @@
         <%= search_form_for @q, :url => url_for(:controller => "pictures", :action => "pictures_search") do |f| %>
           <div id="custom-search-input">
             <div class="input-group">
-              <%= f.search_field :user_username_cont, class: "search-query search_username", placeholder: "Author's name" %>
-              <%= f.search_field :name_cont, class: "search-query search_picturename", placeholder: "Picture's name" %>
+              <%= f.search_field :user_username_cont, class: "search-query search_username",
+                placeholder: "Poster" %>
+              <%= f.search_field :name_cont, class: "search-query search_picturename",
+                placeholder: "Picture's name" %>
               <span class="input-group-btn">
-               <%= f.submit "Search", class: "btn_search" %>
-                  </span>
+                <%= f.submit "", class: "btn_search" %>
+              </span>
             </div>
           </div>
         <% end %>
@@ -51,21 +53,119 @@
                   <div class="price-btn-block"><span class="price"><%=number_to_currency(p.price.round) %> VND</span>
                   </div>
                 </div>
-                <div class="restaurant-block">
-                  <div class="left">
-                    <a class="pull-left" href="#"><%= image_tag "logo1.png" %></a>
-                    <div class="pull-left right-text"><a href="#">Description</a> <span><%= p.description %></span>
-                    </div>
-                  </div>
-                  <div class="right-like-part pull-right"><i class="fa fa-heart-o"></i> <span>48</span></div>
+            </div>
+            <div class="content">
+              <h5><%= link_to p.name, picture_path(p) %></h5>
+              <div class=""><%= p.category %></div>
+              <div class="">Poster: <%= p.user.username %></div>
+              <div class="price-btn-block"><span class="price"><%= p.price.round %> VND</span>
+              </div>
+            </div>
+            <div class="restaurant-block">
+              <div class="left">
+                <!-- <div class="pull-left">Description</div> -->
+                <div class="pull-left right-text">
+                  <span><%= truncate(p.description, length: 150, separator: " ") %></span>
                 </div>
               </div>
             </div>
-          <% end %>
+          </div>
         </div>
-
-      </div>
-    </section>
-
-  <% end %>
+      <% end %>
+    </div>
+  </div>
+  </section>
 </div>
+
+<script>
+    $('div#star-rating-design').raty({
+        path: '/assets/',
+        number: 5,
+        score: function () {
+            return $(this).attr('score');
+        },
+        scoreName: 'review[rating]',
+        readOnly: false,
+        starOn: 'star-on.png',
+        half: true,
+        starType: 'img',
+        click: function (score) {
+            var picture_id = $(this).attr('picture_id');
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                url: '/rating_pictures/',
+                dataType: 'json',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+                },
+                data: {
+                    design_rate: score,
+                    picture_id: picture_id,
+                },
+                success: function (data) {
+                    alert(data.message);
+                },
+                error: function (data) {
+                    alert(data.message);
+                }
+            });
+        }
+    });
+
+    $('div#star-rating-price').raty({
+        path: '/assets/',
+        number: 5,
+        score: function () {
+            return $(this).attr('score');
+        },
+        scoreName: 'review[rating]',
+        readOnly: false,
+        starOn: 'star-on.png',
+        half: true,
+        starType: 'img',
+        click: function (score) {
+            var picture_id = $(this).attr('picture_id');
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                url: '/rating_pictures/',
+                dataType: 'json',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+                },
+                data: {
+                    price_rate: score,
+                    picture_id: picture_id,
+                },
+                success: function (data) {
+                    alert(data.message);
+                },
+                error: function (data) {
+                    alert(data.message);
+                }
+            });
+        }
+    });
+    $('div#fa-show-picture').raty({
+        path: '/assets/',
+        number: 5,
+        readOnly: true,
+        score: function () {
+            return $(this).attr('score');
+        },
+        scoreName: 'review[rating]',
+        starOn: 'star-on.png',
+        half: true,
+        starType: 'img',
+    });
+</script>
+
