@@ -15,9 +15,9 @@
           <div id="custom-search-input">
             <div class="input-group">
               <%= f.search_field :user_username_cont, class: "search-query search_username",
-                placeholder: "Poster" %>
+                                 placeholder: "Poster" %>
               <%= f.search_field :name_cont, class: "search-query search_picturename",
-                placeholder: "Picture's name" %>
+                                 placeholder: "Picture's name" %>
               <span class="input-group-btn">
                 <%= f.submit "", class: "btn_search" %>
               </span>
@@ -30,43 +30,42 @@
 </div>
 <div style="background: white">
   <section class="popular">
-  <div class="container">
-    <div class="title text-center m-b-30">
-      <h2>All painting and artwork</h2>
-      <p class="lead">Enjoy the beauty of art</p>
-    </div>
-    <%= paginate @pictures, theme: "twitter-bootstrap-4" %>
-    <div class="row">
-      <% @pictures.each do |p| %>
-        <div class="col-md-4 food-item">
-          <div class="food-item-wrap">
-            <div class="figure-wrap bg-image">
-              <% if p.images? %>
-                <%= image_tag p.images.url, class: "resize-image" %>
-              <% end %>
-                <div class="rating2 fa-show-picture" id="fa-show-picture" score = <%= p.average_rate %>>
+    <div class="container">
+      <div class="title text-center m-b-30">
+        <h2 class="all-paiting">All painting and artwork</h2>
+        <p class="lead enjoy-beauty">Enjoy the beauty of art</p>
+      </div>
+      <%= paginate @pictures, theme: "twitter-bootstrap-4" %>
+      <div class="row">
+        <% @pictures.each do |p| %>
+          <div class="col-md-4 food-item">
+            <div class="food-item-wrap">
+              <div class="figure-wrap bg-image">
+                <% if p.images? %>
+                  <%= image_tag p.images.url, class: "resize-image" %>
+                <% end %>
+                <div class="rating2 fa-show-picture" id="fa-show-picture" score= <%= p.average_rate %>>
                 </div>
-            </div>
-            <div class="content">
-              <h5><%= link_to p.name, picture_path(p) %></h5>
-              <div class=""><%= p.category %></div>
-              <div class="">Poster: <%= p.user.username %></div>
-              <div class="price-btn-block"><span class="price"><%= p.price.round %> VND</span>
               </div>
-            </div>
-            <div class="restaurant-block">
-              <div class="left">
-                <!-- <div class="pull-left">Description</div> -->
-                <div class="pull-left right-text">
-                  <span><%= truncate(p.description, length: 150, separator: " ") %></span>
+              <div class="content">
+                <h5 class="post-name"><%= link_to p.name, picture_path(p) %></h5>
+                <div class="poster-position">
+                  <div class="category-name"><%= p.category %></div>
+                  <div class="made-by">Made by <%= p.user.username %></div>
+                </div>
+              </div>
+              <div class="restaurant-block">
+                <div class="left">
+                  <div class="pull-left right-text">
+                    <span><%= truncate(p.description, length: 150, separator: " ") %></span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
   </section>
 </div>
 
@@ -109,7 +108,6 @@
             });
         }
     });
-
     $('div#star-rating-price').raty({
         path: '/assets/',
         number: 5,
@@ -160,5 +158,5 @@
         half: true,
         starType: 'img',
     });
-</script>
 
+</script>

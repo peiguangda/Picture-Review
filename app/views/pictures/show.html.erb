@@ -17,23 +17,17 @@
   <section class="article-single">
     <div class="container">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 show-pic">
           <div class="article-body">
             <p class="lead">
               <%= @picture.name %>
             </p>
-            <div class="price">
-              Poster: <%= @picture.user.username %>
-            </div>
-            <div class="price">
-              <span class="price"><%= @picture.price.round %> VND</span>
-            </div>
-            <br>
-            <div class="rating2 fa-show-picture" id="fa-show-picture" score=<%= @picture.average_rate %>>
+            <div class="price made-by">
+              Made by <%= @picture.user.username %>
             </div>
             <figure>
               <%= image_tag @picture.images.url if @picture.images? %>
-              <figcaption><%= @picture.description %></figcaption>
+              <figcaption class="descript-show"><%= @picture.description %></figcaption>
             </figure>
           </div>
         </div>
@@ -54,6 +48,10 @@
             <br>
             <div class="rating2 valuate" id="star-rating-price" score="0" picture_id=<%= @picture.id %>>
               Price
+            </div>
+            <br>
+            <div class="valuate rating2 fa-show-picture" id="fa-show-picture" score=<%= @picture.average_rate %>>
+              Average
             </div>
           <% end %>
         </div>
@@ -101,7 +99,6 @@
             });
         }
     });
-
     $('div#star-rating-price').raty({
         path: '/assets/',
         number: 5,

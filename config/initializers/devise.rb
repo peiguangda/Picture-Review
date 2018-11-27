@@ -207,7 +207,7 @@ Devise.setup do |config|
   # config.reset_password_keys = [:email]
 
   # Time interval you can reset your password with a reset password key.
-  # Don't put a too small interval or your users won't have the time to
+  # Don't put a too small interval or your user won't have the time to
   # change their passwords.
   config.reset_password_within = 6.hours
 
@@ -227,7 +227,7 @@ Devise.setup do |config|
 
   # ==> Scopes configuration
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
-  # "users/sessions/new". It's turned off by default because it's slower if you
+  # "user/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
   config.scoped_views = true
 
@@ -235,7 +235,7 @@ Devise.setup do |config|
   # devise role declared in your routes (usually :user).
   # config.default_scope = :user
 
-  # Set this configuration to false if you want /users/sign_out to sign out
+  # Set this configuration to false if you want /user/sign_out to sign out
   # only the current scope. By default, Devise signs out all scopes.
   # config.sign_out_all_scopes = true
 
@@ -257,6 +257,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :facebook, '151695928806792', 'df4c21f0c9e348333538292f5c0cfd23',
+                  scope: 'email', info_fields: 'email,name',
+                  callback_url: 'http://localhost:3000/users/auth/facebook/callback'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -278,8 +281,8 @@ Devise.setup do |config|
   # config.router_name = :my_engine
   #
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
-  # so you need to do it manually. For the users scope, it would be:
-  # config.omniauth_path_prefix = '/my_engine/users/auth'
+  # so you need to do it manually. For the user scope, it would be:
+  # config.omniauth_path_prefix = '/my_engine/user/auth'
 
   # ==> Turbolinks configuration
   # If your app is using Turbolinks, Turbolinks::Controller needs to be included to make redirection work correctly:

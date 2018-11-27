@@ -83,9 +83,9 @@ html * {
 body {
     font-size: 13px;
     line-height: 1.4;
-    color: #555;
     background-color: #f5f5f5;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-family: Poppins, Helvetica, sans-serif;
+    color: #555;
 }
 
 .high_light h3,
@@ -619,8 +619,8 @@ footer .styled-select {
     -webkit-box-shadow: 0 0 50px 0 rgba(0, 0, 0, .75);
     -moz-box-shadow: 0 0 50px 0 rgba(0, 0, 0, .75);
     box-shadow: 0 0 50px 0 rgba(0, 0, 0, .75);
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 600;
+    font-family: inherit;
     color: #444
 }
 
