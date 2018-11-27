@@ -51,8 +51,7 @@
               <h5><%= link_to p.name, picture_path(p) %></h5>
               <div class=""><%= p.category %></div>
               <div class="">Poster: <%= p.user.username %></div>
-              <div class="price-btn-block"><span class="price"><%= p.price.round %> VND</span>
-              </div>
+            
             </div>
             <div class="restaurant-block">
               <div class="left">
@@ -109,7 +108,6 @@
             });
         }
     });
-
     $('div#star-rating-price').raty({
         path: '/assets/',
         number: 5,
@@ -161,4 +159,3 @@
         starType: 'img',
     });
 </script>
-
