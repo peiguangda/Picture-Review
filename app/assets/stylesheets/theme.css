@@ -4109,14 +4109,14 @@ footer.short-2 .contact-action:hover {
   margin-bottom: 16px;
 }
 .pagination li a {
-  color: #3498db;
+  color: #365899;
   background: none;
   margin-left: 12px;
   border-radius: 50%;
   padding: 5px 12px;
 }
 .pagination li.active {
-  background: #3498db;
+  background: #365899;
 }
 .pagination li:first-child a,
 .pagination li:last-child a {

@@ -632,10 +632,16 @@ hr {
 
 .food-item-wrap {
     border: 1px solid #eaebeb;
-    border-radius: 2px;
     overflow: hidden;
-    margin-bottom: 30px;
     background: #fafaf8;
+    transition: all ease-in-out 0.3s;
+    visibility: visible;
+    margin-bottom: 25px;
+    padding: 15px 15px 15px 20px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
+    animation-name: fadeIn;
 }
 
 .food-item-wrap h5 a {
@@ -676,6 +682,7 @@ hr {
 
 .food-item-wrap .right-text {
     margin-left: 10px;
+    font-style: italic;
 }
 
 .food-item-wrap .right-text a {
