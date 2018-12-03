@@ -28,6 +28,11 @@ class PicturesController < ApplicationController
     end
   end
 
+  def find_by_name
+    pictures = Picture.find_picture params[:picture_name]
+    render json: {data: pictures}
+  end
+
   private
 
   def picture_params

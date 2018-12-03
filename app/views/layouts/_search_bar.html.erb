@@ -1,0 +1,110 @@
+<div class="container">
+  <div class="row">
+    <div class="dme col-md-12 text-center">
+      <span class="text-white alt-font ok1">Painting Every Day</span>
+      <h1 class="text-white title-diamond">Each picture is a life worthy of humanity</h1>
+    </div>
+    <%= search_form_for @q, :url => url_for(:controller => "pictures", :action => "pictures_search") do |f| %>
+      <div id="custom-search-input" class="row">
+        <div class="input-group row">
+          <%= f.search_field :user_username_cont, class: "search-query search_username",
+                             placeholder: "Poster", autocomplete: 'off' %>
+          <%= f.search_field :name_cont, class: "search-query search_picturename",
+                             placeholder: "Picture's name", autocomplete: 'off' %>
+          <span class="input-group-btn">
+                <%= f.submit "", class: "btn_search", autocomplete: 'off' %>
+              </span>
+          <br>
+          <div class="abc"></div>
+        </div>
+      </div>
+      <div class="list-suggest">
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+    $('.search_username').keyup(function () {
+        let username = $(this).val();
+        console.log(username);
+        $.ajax({
+            url: "/users/search",
+            method: "GET",
+            dataType: "json",
+            data: {username: username},
+            error: function (xhr, status, error) {
+                console.error('AJAX Error: ' + status + error);
+            },
+            success: function (response) {
+                var username = response.data;
+                $('.list-suggest').empty();
+                $('.list-suggest').append('<li class="sbct">\n' +
+                    '              <div class="sbl1"><span>' + username[0]["username"] + '</span></div>\n' +
+                    '            </li>');
+                for (let i = 1; i < username.length; i++) {
+                    $('.list-suggest').append('<li class="sbct">\n' +
+                        '              <div class="sbl1"><span>' + username[i]["username"] + '</span></div>\n' +
+                        '            </li>');
+                }
+                $('li.sbct').each(function (index, val) {
+                    $(this).mouseover(function () {
+                        $(this).addClass("selected");
+                    });
+                    $(this).mouseout(function () {
+                        $(this).removeClass("selected");
+                    });
+                    $(this).click(function () {
+                        console.log($(this)[0].childNodes[1].childNodes[0].innerHTML);
+                        var value = $(this)[0].childNodes[1].childNodes[0].innerHTML;
+                        $('.search_username').val(value);
+                        $('.list-suggest').empty();
+                    });
+                })
+            }
+        });
+
+    });
+
+    $('.search_picturename').keyup(function () {
+        let name = $(this).val();
+        console.log(name);
+        $.ajax({
+            url: "/pictures/search",
+            method: "GET",
+            dataType: "json",
+            data: {picture_name: name},
+            error: function (xhr, status, error) {
+                console.error('AJAX Error: ' + status + error);
+            },
+            success: function (response) {
+                var pictures = response.data;
+                console.log(pictures);
+                $('.list-suggest').empty();
+                $('.list-suggest').append('<li class="sbct">\n' +
+                    '              <div class="sbl1"><span>' + pictures[0]["name"] + '</span></div>\n' +
+                    '            </li>');
+                for (let i = 1; i < pictures.length; i++) {
+                    $('.list-suggest').append('<li class="sbct">\n' +
+                        '              <div class="sbl1"><span>' + pictures[i]["name"] + '</span></div>\n' +
+                        '            </li>');
+                }
+                $('li.sbct').each(function (index, val) {
+                    $(this).mouseover(function () {
+                        $(this).addClass("selected");
+                    });
+                    $(this).mouseout(function () {
+                        $(this).removeClass("selected");
+                    });
+                    $(this).click(function () {
+                        console.log($(this)[0].childNodes[1].childNodes[0].innerHTML);
+                        var value = $(this)[0].childNodes[1].childNodes[0].innerHTML;
+                        $('.search_picturename').val(value);
+                        $('.list-suggest').empty();
+                    });
+                })
+            }
+        });
+
+    })
+</script>
