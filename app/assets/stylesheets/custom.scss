@@ -5,6 +5,7 @@
   font-weight: bold;
   color: white;
   font-size: x-large;
+  font-family: cursive;
   &:hover {
     color: #b7d6c4;
   }
@@ -56,10 +57,26 @@
 .search_username {
   border-radius: 30px 0px 0px 30px !important;
   border-right-color: white;
+  width: 50%;
+  height: 55px;
+  padding-left: 20px;
+  border: 0;
+  box-shadow: 0 0 50px 0 rgba(0,0,0,0.35);
+  font-weight: 500;
+  font-size: 15px;
+  color: #333;
 }
 
 .search_picturename {
   border-radius: 0px 30px 30px 0px !important;
+  width: 50%;
+  height: 55px;
+  padding-left: 20px;
+  border: 0;
+  box-shadow: 0 0 10px 0 rgba(53, 58, 113, 0.75) !important;
+  font-weight: 500;
+  font-size: 15px;
+  color: #333;
 }
 
 .fa-show-picture {
@@ -74,11 +91,11 @@
 }
 
 .valuate_text {
-  text-align: center;
-  font-size: 28px;
   font-weight: 600;
   line-height: 32px;
   margin-bottom: 24px;
+  font-size: 28px;
+  margin-left: 38%;
   color: #333333;
 }
 
@@ -96,14 +113,14 @@
   margin: 0;
   font-size: 3.75rem;
   font-weight: 700;
-  color: #133da2;
+  color: #252a32;
 }
 
 .enjoy-beauty {
   margin: 0;
   font-size: 1.75rem;
   font-weight: 300;
-  color: #133da2 !important;
+  color: #252a32 !important;
 }
 
 .poster-position {
@@ -139,4 +156,66 @@
   font-family: monospace;
   color: #3e3e46 !important;
   margin-top: 40px !important;
+}
+
+.lead-name {
+  font-size: 28px !important;
+  margin-left: -13% !important;
+}
+
+.show-valuate {
+  width: 19%;
+  display: inline-block;
+  float: left;
+  font-size: 17px;
+  font-family: inherit;
+}
+
+.title-diamond {
+  font-family: -webkit-body !important;
+}
+
+#custom-search-input {
+  flex: 1;
+  display: flex;
+  height: 56px;
+}
+
+.list-suggest {
+  position: relative;
+  text-align: left;
+  z-index: 1;
+  cursor: default;
+  -webkit-user-select: none;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+  margin-top: 9px;
+  width: 48%;
+  margin-left: 25%;
+}
+
+.sbct {
+  padding: 16px 16px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.sbl1 {
+  display: flex;
+  font-size: 16px;
+  color: #212121;
+  flex: auto;
+  align-items: center;
+  word-break: break-word;
+  padding-right: 8px;
+}
+
+.selected {
+  background: darkgray;
 }

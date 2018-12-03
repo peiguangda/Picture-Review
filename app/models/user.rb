@@ -25,5 +25,8 @@ class User < ApplicationRecord
     end
   end
 
+  def self.find_user username
+    User.select{|e| e.username.include? username}
+  end
 
 end
