@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
   before_action :check_role
 
   def home
+    @bookmark = Bookmark.new
     @pictures = Picture.all.page(params[:page]).per 6
     @users = User.all
     return unless user_signed_in?

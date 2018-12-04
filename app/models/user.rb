@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
   acts_as_commontator
   has_many :pictures
+  has_many :bookmarks
   has_many :rating_pictures
 
   enum role: {user: 0, admin: 1}
