@@ -2286,7 +2286,7 @@ blockquote {
     opacity: 0;
   }
 }
-input[type="submit"] {
+.submit1 {
   -webkit-appearance: none;
   background: none;
   -webkit-transition: all .3s ease;
@@ -2297,7 +2297,7 @@ input[type="submit"] {
   display: inline-block;
   padding: 14px 28px 13px 28px;
   line-height: 1;
-  border: 2px solid #3498db;
+/*  border: 2px solid #3498db;*/
   color: #3498db;
   max-width: 155px;
   font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2306,6 +2306,29 @@ input[type="submit"] {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+.submit2 {
+  -webkit-appearance: none;
+  background: none;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+  min-width: 155px;
+  border-radius: 25px;
+  display: inline-block;
+  padding: 14px 28px 13px 28px;
+  line-height: 1;
+  background: #efeded;
+  border: 2px solid green;
+  color: #3498db;
+  max-width: 155px;
+  font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .strip .mail-list-signup input[type="submit"] {
   background: none;
   border: 2px solid #fff;

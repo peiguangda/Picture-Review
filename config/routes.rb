@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/pictures/search", to: "pictures#find_by_name"
   resources :pictures
   resources :rating_pictures
+  resources :bookmarks
   get "/home", to: "static_pages#home"
   get "/help", to: "static_pages#help"
   get "/about", to: "static_pages#about"
