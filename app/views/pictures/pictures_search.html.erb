@@ -21,34 +21,7 @@
 
           <!-- Each popular food item starts -->
           <% @result.each do |p| %>
-            <div class="col-md-4 food-item">
-              <div class="food-item-wrap">
-                <div class="figure-wrap bg-image">
-                  <% if p.images? %>
-                    <%= image_tag p.images.url, class: "resize-image" %>
-                  <% end %>
-                  <div class="rating pull-left"><i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i></div>
-                  <!-- <div class="review pull-right"><a href="#">198 reviews</a></div> -->
-                </div>
-                <div class="content">
-                  <!--                                <h5><a href=""><%#= p.name %></a></h5>-->
-                  <h5><%= link_to p.name, picture_path(p) %></h5>
-                  <div class="product-name"><%= p.category %></div>
-                  <div class="price-btn-block"><span class="price"><%= p.price %> VND</span>
-                  </div>
-                </div>
-                <div class="restaurant-block">
-                  <div class="left">
-                    <!-- <a class="pull-left" href="#"><%= image_tag "logo1.png" %></a> -->
-                    <div class="pull-left right-text">
-                      <span><%= truncate(p.description, length: 150, separator: " ") %></span>
-                    </div>
-                  </div>
-                  <!-- <div class="right-like-part pull-right"><i class="fa fa-heart-o"></i> <span>48</span></div> -->
-                </div>
-              </div>
-            </div>
+            <%= render "pictures/picture", p: p %>
           <% end %>
         </div>
       <% else %>

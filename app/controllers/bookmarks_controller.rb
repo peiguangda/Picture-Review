@@ -1,9 +1,12 @@
 class BookmarksController < ApplicationController
-   before_action :authenticate_user!, only: [:create, :index]
+  before_action :authenticate_user!, only: [:create, :index]
+
   def create
-    @bookmark = Bookmark.find_by user_id:current_user.id, picture_id:bookmark_params[:picture_id]
+    @bookmark = Bookmark.find_by user_id: current_user.id,
+                                 picture_id: bookmark_params[:picture_id]
     unless @bookmark
-      @bookmark = Bookmark.create user_id:current_user.id, picture_id:bookmark_params[:picture_id]
+      @bookmark = Bookmark.create user_id: current_user.id,
+                                  picture_id: bookmark_params[:picture_id]
     end
     @bookmark.update_attributes status: !@bookmark.status
     # respond_to do |format|
@@ -20,6 +23,7 @@ class BookmarksController < ApplicationController
 
 
   private
+
   def bookmark_params
     params.require(:bookmark).permit :picture_id
   end
