@@ -2297,7 +2297,6 @@ blockquote {
   display: inline-block;
   padding: 14px 28px 13px 28px;
   line-height: 1;
-/*  border: 2px solid #3498db;*/
   color: #3498db;
   max-width: 155px;
   font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2319,7 +2318,6 @@ blockquote {
   padding: 14px 28px 13px 28px;
   line-height: 1;
   background: #efeded;
-  border: 2px solid green;
   color: #3498db;
   max-width: 155px;
   font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;

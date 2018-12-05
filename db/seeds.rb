@@ -1,5 +1,38 @@
+30.times do |n|
+  name  = Faker::Name.name
+  email = "tuoidaythi-#{n+1}@railstutorial.org"
+  password = "111111"
+  User.create!  username:  name,
+                email: email,
+                password: password,
+                password_confirmation: password,
+                role: 0
+end
+
+30.times do |n|
+  name  = Faker::Name.name
+  email = "abc-#{n+1}@railstutorial.org"
+  password = "111111"
+  User.create!  username:  name,
+                email: email,
+                password: password,
+                password_confirmation: password,
+                role: 0
+end
+
+30.times do |n|
+  name  = Faker::Name.name
+  email = "thaikhamchim-#{n+1}@railstutorial.org"
+  password = "111111"
+  User.create!  username:  name,
+                email: email,
+                password: password,
+                password_confirmation: password,
+                role: 0
+end
+
 admin = User.create!({
-   username: "ADMIN",
+   username: "admin",
    email: "admin@gmail.com",
    password: "111111",
    password_confirmation: "111111",
