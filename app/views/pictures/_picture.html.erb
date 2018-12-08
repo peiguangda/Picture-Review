@@ -16,12 +16,12 @@
       <% if user_signed_in? %>
         <% @a = current_user.bookmarks.find_by(picture_id: p.id) %>
         <% if @a == nil || @a.status == false %>
-          <%= form_for Bookmark.new do |f| %>
+          <%= form_for Bookmark.new, remote: true do |f| %>
             <%= f.hidden_field :picture_id, value: p.id, id: "picture-#{p.id}" %>
             <%= f.submit "Save", class: "btn btn-danger submit1" %>
           <% end %>
         <% else %>
-          <%= form_for Bookmark.new do |f| %>
+          <%= form_for Bookmark.new, remote: true do |f| %>
             <%= f.hidden_field :picture_id, value: p.id, id: "picture-#{p.id}" %>
             <%= f.submit "UnSave", class: "btn btn-success submit2" %>
           <% end %>

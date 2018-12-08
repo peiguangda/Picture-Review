@@ -1,5 +1,12 @@
-<%= form_for @bookmark, remote:true do |f| %>
-<%= f.hidden_field :picture_id, value: picture_id %>
-<%= f.submit "Bookmark", class: "btn btn-danger" %>
+<% @a = current_user.bookmarks.find_by(picture_id: picture_id) %>
+<% if @a == nil || @a.status == false %>
+  <%= form_for Bookmark.new, remote: true do |f| %>
+    <%= f.hidden_field :picture_id, value: picture_id, id: "picture-#{picture_id}" %>
+    <%= f.submit "Save", class: "btn btn-danger submit1" %>
+  <% end %>
+<% else %>
+  <%= form_for Bookmark.new, remote: true do |f| %>
+    <%= f.hidden_field :picture_id, value: picture_id, id: "picture-#{picture_id}" %>
+    <%= f.submit "UnSave", class: "btn btn-success submit2" %>
+  <% end %>
 <% end %>
-

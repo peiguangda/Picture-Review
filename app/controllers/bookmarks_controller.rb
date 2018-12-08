@@ -9,11 +9,11 @@ class BookmarksController < ApplicationController
                                   picture_id: bookmark_params[:picture_id]
     end
     @bookmark.update_attributes status: !@bookmark.status
-    # respond_to do |format|
-    #   format.js
-    #   format.html
-    # end
-    redirect_to home_path
+    respond_to do |format|
+      format.js
+      format.html
+    end
+    # redirect_to home_path
   end
 
   def index
