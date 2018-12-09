@@ -97,6 +97,8 @@ ActiveRecord::Schema.define(version: 2018_12_03_150401) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
     t.string "provider"
     t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true

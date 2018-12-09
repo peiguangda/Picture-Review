@@ -29,6 +29,7 @@ gem "rating"
 gem "omniauth"
 gem "omniauth-facebook"
 gem "faker"
+gem "omniauth-google-oauth2", :git => 'https://github.com/zquestz/omniauth-google-oauth2', :branch => 'master'
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
