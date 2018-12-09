@@ -1,0 +1,40 @@
+<div class="col-md-4 food-item">
+  <div class="food-item-wrap">
+    <div class="figure-wrap bg-image">
+      <% if p.images? %>
+        <%= image_tag p.images.url, class: "resize-image" %>
+      <% end %>
+      <div class="rating2 fa-show-picture" id="fa-show-picture" score= <%= p.average_rate %>>
+      </div>
+    </div>
+    <div class="content">
+      <h5 class="post-name"><%= link_to p.name, picture_path(p) %></h5>
+      <div class="poster-position">
+        <div class="category-name"><%= p.category %></div>
+        <div class="made-by">Made by <%= p.user.username %></div>
+      </div>
+      <% if user_signed_in? %>
+        <% @a = current_user.bookmarks.find_by(picture_id: p.id) %>
+        <% if @a == nil || @a.status == false %>
+          <%= form_for Bookmark.new, remote: true do |f| %>
+            <%= f.hidden_field :picture_id, value: p.id, id: "picture-#{p.id}" %>
+            <%= f.submit "Save", class: "btn btn-danger submit1" %>
+          <% end %>
+        <% else %>
+          <%= form_for Bookmark.new, remote: true do |f| %>
+            <%= f.hidden_field :picture_id, value: p.id, id: "picture-#{p.id}" %>
+            <%= f.submit "UnSave", class: "btn btn-success submit2" %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+    </div>
+    <div class="restaurant-block">
+      <div class="left">
+        <div class="pull-left right-text">
+          <span><%= truncate(p.description, length: 150, separator: " ") %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

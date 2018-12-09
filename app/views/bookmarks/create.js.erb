@@ -1,2 +1,1 @@
-// $("#bookmark").replaceWith('<%= j render("bookmarks/bookmark") %>');
-alert("ok");
+$("#picture-<%= @bookmark.picture_id %>").parent().replaceWith('<%= j render "bookmarks/bookmark", picture_id: @bookmark.picture_id %>');
