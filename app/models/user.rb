@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :omniauthable, :omniauth_providers => [:google_oauth2]
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook,:google_oauth2]
@@ -38,7 +37,7 @@ class User < ApplicationRecord
   
     unless user
       password = Devise.friendly_token[0,20]
-      user = User.create(name: data["username"], email: data["email"],
+      user = User.create(username: data["name"], email: data["email"],
         password: password, password_confirmation: password
       )
     end
