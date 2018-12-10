@@ -14,6 +14,16 @@ GIT
   specs:
     raty-rails (0.1.1)
 
+GIT
+  remote: https://github.com/zquestz/omniauth-google-oauth2
+  revision: ab80a56dc1ea2fe105ccdc893607bb70aa64ed3c
+  branch: master
+  specs:
+    omniauth-google-oauth2 (0.5.4)
+      jwt (>= 1.5)
+      omniauth (>= 1.1.1)
+      omniauth-oauth2 (>= 1.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -319,6 +329,7 @@ DEPENDENCIES
   mini_magick
   omniauth
   omniauth-facebook
+  omniauth-google-oauth2!
   owlcarousel-rails
   puma (~> 3.11)
   rails (~> 5.2.1)

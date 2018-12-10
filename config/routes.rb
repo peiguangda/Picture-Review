@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get "/pictures/search", to: "pictures#find_by_name"
   resources :pictures
   resources :rating_pictures
@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   get "/users/search", to: "users#find_by_username"
   root 'static_pages#home'
   mount Commontator::Engine => '/commontator'
-
+  
 end
